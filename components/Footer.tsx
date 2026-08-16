@@ -1,24 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SocialLink } from '../types';
-import { AnimatedKrishnaText } from './AnimatedKrishnaText';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface FooterProps {
   socialLinks: SocialLink[];
-  developerName: string;
-  developerUrl: string;
-  animatedNameEnglish?: string;
-  animatedNameJapanese?: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({
-  socialLinks,
-  developerName,
-  developerUrl,
-  animatedNameEnglish,
-  animatedNameJapanese,
-}) => {
+export const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
   const { t } = useTranslation();
+  const { personalInfo } = usePortfolio();
 
   return (
     <footer className="w-full bg-card dark:bg-dark-card border-t border-border dark:border-dark-border mt-auto">
@@ -47,33 +38,14 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         <div className="text-center">
-          <p className="text-xs text-text-secondary dark:text-dark-text-secondary">
-            &copy; {new Date().getFullYear()} {t('common.allRightsReserved')}
+          <p className="text-sm font-semibold text-text-primary dark:text-dark-text-primary">
+            {personalInfo.name}
           </p>
           <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-1">
-            {t('common.developedBy')}{' '}
-            <a
-              href={developerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline hover:text-text-primary dark:hover:text-dark-text-primary transition-colors"
-              aria-label={t('common.visitDeveloper', { name: developerName })}
-            >
-              <AnimatedKrishnaText
-                text={developerName}
-                krishnaEnglish={animatedNameEnglish}
-                krishnaJapanese={animatedNameJapanese}
-              />
-            </a>
-            , {t('common.uiDesignBy')}{' '}
-            <a
-              href="https://dribbble.com/shots/22110108-Subtle-Folio-Portfolio-Framer-Template"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-text-primary dark:hover:text-dark-text-primary transition-colors"
-            >
-              Nur Praditya
-            </a>
+            {personalInfo.title}
+          </p>
+          <p className="text-xs text-text-secondary dark:text-dark-text-secondary mt-4">
+            &copy; {new Date().getFullYear()} {t('common.allRightsReserved')}
           </p>
         </div>
       </div>

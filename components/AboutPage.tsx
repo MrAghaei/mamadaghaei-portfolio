@@ -6,10 +6,10 @@ import { SideProjectsSection } from './SideProjectsSection';
 import { CallToAction } from './CallToAction';
 import { GitHubContributionsGraph } from './GitHubContributionsGraph';
 import { SkillBadge } from './SkillBadge';
-import { LaptopIcon } from './icons';
+import { LaptopIcon, BriefcaseIcon } from './icons';
 import { AnimatedName } from './AnimatedName';
 
-export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects, email, setCurrentPage, theme, skills }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects, experience, email, setCurrentPage, theme, skills }) => {
   const { t } = useTranslation();
   const [isGlitchBurstActive, setIsGlitchBurstActive] = useState(false);
 
@@ -108,6 +108,39 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
             >
               {paragraph}
             </p>
+          ))}
+        </div>
+      </section>
+
+      <section id="experience" className="animated-item anim-fadeInUp anim-delay-400">
+        <h2 className="text-2xl sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-6 flex items-center">
+          <BriefcaseIcon className="w-7 h-7 mr-3 text-text-secondary dark:text-dark-text-secondary" />
+          {t('sections.experience')}
+        </h2>
+        <div className="space-y-8">
+          {experience.map((entry, index) => (
+            <div
+              key={entry.id}
+              className="animated-item anim-fadeInUp border border-border dark:border-dark-border rounded-xl p-5 md:p-6 bg-card dark:bg-dark-card"
+              style={{ animationDelay: `${index * 100 + 450}ms` }}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-text-primary dark:text-dark-text-primary">
+                    {entry.role}
+                  </h3>
+                  <p className="text-text-secondary dark:text-dark-text-secondary">{entry.company}</p>
+                </div>
+                <p className="text-sm text-text-secondary dark:text-dark-text-secondary whitespace-nowrap">
+                  {entry.period}
+                </p>
+              </div>
+              <ul className="space-y-2 text-text-secondary dark:text-dark-text-secondary text-base leading-relaxed list-disc pl-5">
+                {entry.highlights.map((highlight, highlightIndex) => (
+                  <li key={highlightIndex}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </section>

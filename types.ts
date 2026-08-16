@@ -11,12 +11,21 @@ export interface NavItem {
   icon: React.ComponentType<IconProps>;
 }
 
+export interface ExperienceEntry {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  highlights: string[];
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
   bio: string;
   imageUrl: string;
   email: string;
+  phone?: string;
   /** Text spinning around the profile image on the home hero. Falls back to name if omitted. */
   circularText?: string;
   /** Letter spacing for the circular text (CSS value, e.g. "0.9em", "4px"). */
@@ -119,7 +128,6 @@ export interface HeroProps {
   bio: string;
   imageUrl: string;
   email: string;
-  instagramUrl: string;
   circularText?: string;
   circularTextLetterSpacing?: string;
   animatedNameEnglish?: string;
@@ -135,6 +143,7 @@ export interface CallToActionProps {
 export interface AboutPageProps {
   personalInfo: PersonalInfo;
   sideProjects: SideProject[];
+  experience: ExperienceEntry[];
   email: string;
   setCurrentPage: (pageId: string, projectId?: string) => void;
   theme: "light" | "dark"; // Updated theme prop type

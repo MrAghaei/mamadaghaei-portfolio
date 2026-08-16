@@ -26,7 +26,7 @@ const AppContent: React.FC = () => {
   const location = useLocation();
   const lenis = useLenis();
   const { t } = useTranslation();
-  const { personalInfo, projects, sideProjects, skills, developerCredit, isRtl } = usePortfolio();
+  const { personalInfo, projects, sideProjects, skills, experience, isRtl } = usePortfolio();
   const [showIntro, setShowIntro] = useState(true);
   
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -221,7 +221,6 @@ const AppContent: React.FC = () => {
                 circularTextLetterSpacing={personalInfo.circularTextLetterSpacing}
                 animatedNameEnglish={personalInfo.animatedNameEnglish}
                 animatedNameJapanese={personalInfo.animatedNameJapanese}
-                instagramUrl={SOCIAL_LINKS.find((link) => link.name === 'Instagram')?.url ?? 'https://instagram.com'}
                 setCurrentPage={handleSetPage}
               />
               <ProjectsSection 
@@ -244,7 +243,8 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={
             <AboutPage 
               personalInfo={personalInfo} 
-              sideProjects={sideProjects} 
+              sideProjects={sideProjects}
+              experience={experience}
               email={personalInfo.email} 
               setCurrentPage={handleSetPage} 
               theme={theme} 
@@ -305,13 +305,7 @@ const AppContent: React.FC = () => {
           } />
         </Routes>
       </main>
-      <Footer
-        socialLinks={SOCIAL_LINKS}
-        developerName={developerCredit.name}
-        developerUrl={developerCredit.url}
-        animatedNameEnglish={developerCredit.animatedNameEnglish}
-        animatedNameJapanese={developerCredit.animatedNameJapanese}
-      />
+      <Footer socialLinks={SOCIAL_LINKS} />
     </div>
   );
 };

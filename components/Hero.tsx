@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 // import React, { useState, useCallback } from 'react';
-import { PlusIcon, /* DocumentDuplicateIcon, */ CheckBadgeIcon, InstagramIcon } from './icons';
+import { PlusIcon, Squares2X2Icon } from './icons';
 import { HeroProps } from '../types'; // Import HeroProps
 import { CircularText } from './CircularText'; // Import CircularText
 import { AnimatedKrishnaText } from './AnimatedKrishnaText';
@@ -15,7 +15,6 @@ export const Hero: React.FC<HeroProps> = ({
   title,
   bio,
   imageUrl,
-  instagramUrl,
   circularText,
   circularTextLetterSpacing,
   animatedNameEnglish,
@@ -24,13 +23,6 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const { t } = useTranslation();
   const { visitorCount, loading, error } = useVisitorCount();
-
-  // const copyEmail = useCallback(() => {
-  //   navigator.clipboard.writeText(email).then(() => {
-  //     setEmailCopied(true);
-  //     setTimeout(() => setEmailCopied(false), 2000);
-  //   }).catch(err => console.error("Failed to copy email: ", err));
-  // }, [email]);
 
   const circularTextContent =
     circularText?.trim() || `${name.toUpperCase()} • `.repeat(2);
@@ -73,24 +65,13 @@ export const Hero: React.FC<HeroProps> = ({
               <PlusIcon className="w-4 h-4 mr-2" />
               {t('common.hireMe')}
             </button>
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setCurrentPage('projects')}
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-button-secondary-text dark:text-dark-button-secondary-text bg-button-secondary-bg dark:bg-dark-button-secondary-bg hover:bg-button-secondary-hover dark:hover:bg-dark-button-secondary-hover rounded-lg transition-colors focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-              aria-label={t('common.visitInstagram')}
             >
-              <InstagramIcon className="w-4 h-4 mr-2" />
-              {t('common.instagram')}
-            </a>
-            {/* <button
-              onClick={copyEmail}
-              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-button-secondary-text dark:text-dark-button-secondary-text bg-button-secondary-bg dark:bg-dark-button-secondary-bg hover:bg-button-secondary-hover dark:hover:bg-dark-button-secondary-hover rounded-lg transition-colors focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-              aria-live="polite"
-            >
-              <DocumentDuplicateIcon className="w-4 h-4 mr-2" />
-              {emailCopied ? 'Email Copied!' : 'Copy Email'}
-            </button> */}
+              <Squares2X2Icon className="w-4 h-4 mr-2" />
+              {t('common.viewProjects')}
+            </button>
           </div>
         </div>
         <div className="animated-item anim-fadeInUp anim-delay-200 md:w-1/3 flex justify-center md:justify-end mt-8 md:mt-0">

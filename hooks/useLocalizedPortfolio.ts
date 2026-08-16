@@ -7,6 +7,7 @@ import {
   SKILLS,
   PERSONAL_INFO,
   DEVELOPER_CREDIT,
+  EXPERIENCE,
 } from "../constants";
 import type {
   NavItem,
@@ -14,6 +15,7 @@ import type {
   Project,
   SideProject,
   Skill,
+  ExperienceEntry,
 } from "../types";
 
 const mapProject = (
@@ -90,6 +92,25 @@ const mapSideProject = (
   };
 };
 
+const mapExperience = (
+  entry: ExperienceEntry,
+  t: TFunction
+): ExperienceEntry => {
+  const base = `experience.${entry.id}`;
+  const highlights = t(`${base}.highlights`, {
+    returnObjects: true,
+    defaultValue: entry.highlights,
+  }) as string[];
+
+  return {
+    ...entry,
+    company: t(`${base}.company`, { defaultValue: entry.company }),
+    role: t(`${base}.role`, { defaultValue: entry.role }),
+    period: t(`${base}.period`, { defaultValue: entry.period }),
+    highlights: Array.isArray(highlights) ? highlights : entry.highlights,
+  };
+};
+
 export const useLocalizedPortfolio = () => {
   const { t, i18n } = useTranslation();
 
@@ -146,6 +167,7 @@ export const useLocalizedPortfolio = () => {
 
     const projects = PROJECTS.map((project) => mapProject(project, t, "projects"));
     const sideProjects = SIDE_PROJECTS.map((project) => mapSideProject(project, t));
+    const experience = EXPERIENCE.map((entry) => mapExperience(entry, t));
 
     const skills: Skill[] = SKILLS.map((skill, index) => ({
       ...skill,
@@ -162,6 +184,7 @@ export const useLocalizedPortfolio = () => {
       navItems,
       projects,
       sideProjects,
+      experience,
       skills,
       developerCredit,
       isRtl: i18n.dir() === "rtl",

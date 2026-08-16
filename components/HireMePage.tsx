@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HireMePageProps } from '../types';
-import { CheckBadgeIcon, ArrowLeftIcon } from './icons';
+import { CheckBadgeIcon, ArrowLeftIcon, EnvelopeIcon } from './icons';
 import { WEB3FORMS_ACCESS_KEY } from '../constants';
 
 interface FormErrors {
@@ -11,7 +11,7 @@ interface FormErrors {
   form?: string; 
 }
 
-export const HireMePage: React.FC<HireMePageProps> = ({ personalInfo, setCurrentPage }) => {
+export const HireMePage: React.FC<HireMePageProps> = ({ personalInfo, socialLinks, setCurrentPage }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -122,6 +122,37 @@ export const HireMePage: React.FC<HireMePageProps> = ({ personalInfo, setCurrent
           <p className="text-md text-text-secondary dark:text-dark-text-secondary mb-8">
             {personalInfo.hireMePageSubtitle}
           </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-sm">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-center text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary transition-colors"
+            >
+              <EnvelopeIcon className="w-4 h-4 mr-2" />
+              {personalInfo.email}
+            </a>
+            {personalInfo.phone && (
+              <a
+                href={`tel:${personalInfo.phone}`}
+                className="flex items-center text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary transition-colors"
+              >
+                <span className="w-4 h-4 mr-2 text-center">☎</span>
+                {personalInfo.phone}
+              </a>
+            )}
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary transition-colors"
+              >
+                <link.icon className="w-4 h-4 mr-2" />
+                {link.name}
+              </a>
+            ))}
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
