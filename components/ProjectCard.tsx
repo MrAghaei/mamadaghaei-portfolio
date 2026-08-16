@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
 import { ArrowRightIcon, CodeBracketSquareIcon } from './icons'; // Import default icon
 
@@ -11,7 +11,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className, style, onProjectSelect }) => {
-  // const IconComponent = project.iconComponent; // No longer needed directly for the main visual if cardImageUrl or default is used
+  const { t } = useTranslation();
 
   const handleCardClick = () => {
     onProjectSelect(project.id);
@@ -28,8 +28,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className, st
     <button
       onClick={handleCardClick}
       onKeyPress={handleKeyPress}
-      className={`block group text-left w-full ${className || ''}`}
-      aria-label={`View details for ${project.name}`}
+      className={`block group text-start w-full ${className || ''}`}
+      aria-label={t('common.viewProjectDetails', { name: project.name })}
       style={style}
     >
       <div className="p-5 bg-card dark:bg-dark-card hover:bg-card-hover dark:hover:bg-dark-card-hover rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 border border-border dark:border-dark-border h-full flex flex-col justify-between">
@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className, st
               {project.cardImageUrl ? (
                 <img 
                   src={project.cardImageUrl} 
-                  alt={`${project.name} preview`} 
+                  alt={t('common.projectPreview', { name: project.name })} 
                   className="w-14 h-14 rounded-full object-cover border-2 border-card dark:border-dark-card" // Added a subtle border
                 />
               ) : (

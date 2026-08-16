@@ -1,5 +1,6 @@
 import React from 'react';
-import { Project, ProjectsSectionProps } from '../types';
+import { useTranslation } from 'react-i18next';
+import { ProjectsSectionProps } from '../types';
 import { ProjectCard } from './ProjectCard';
 import { ArrowRightIcon } from './icons'; // Import ArrowRightIcon
 
@@ -10,6 +11,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   title = "Projects", // Default title
   maxItems // Optional maxItems to display
 }) => {
+  const { t } = useTranslation();
   const projectsToDisplay = maxItems ? projects.slice(0, maxItems) : projects;
 
   return (
@@ -41,9 +43,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <button
             onClick={onViewAllClick}
             className="text-sm font-medium text-accent-green hover:text-accent-green/80 transition-colors inline-flex items-center group"
-            aria-label="View all projects"
+            aria-label={t('common.viewAllProjects')}
           >
-            View All Projects
+            {t('common.viewAllProjects')}
             <ArrowRightIcon className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform duration-200 ease-in-out" />
           </button>
         </div>

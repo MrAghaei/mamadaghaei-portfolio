@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { SideProject, SideProjectsSectionProps } from '../types'; // Updated import
+import { useTranslation } from 'react-i18next';
+import { SideProjectsSectionProps } from '../types';
 import { SideProjectCard } from './SideProjectCard';
 import { SectionTitle } from './SectionTitle';
 import { ArrowRightIcon } from './icons'; // Import ArrowRightIcon
@@ -10,11 +10,11 @@ export const SideProjectsSection: React.FC<SideProjectsSectionProps> = ({
   title, 
   subtitle,
   onViewAllClick,
-  viewAllText = "View All Products" // Default text for the button
+  viewAllText
 }) => {
-  // Determine the title to display. If 'title' prop is undefined, use default.
-  // If 'title' prop is an empty string, it means no title should be shown.
-  const effectiveTitle = title === undefined ? "Side Projects" : title;
+  const { t } = useTranslation();
+  const effectiveTitle = title === undefined ? t('sections.sideProjects') : title;
+  const resolvedViewAllText = viewAllText ?? t('common.viewAllProducts');
 
   return (
     <section>
@@ -43,9 +43,9 @@ export const SideProjectsSection: React.FC<SideProjectsSectionProps> = ({
           <button
             onClick={onViewAllClick}
             className="text-sm font-medium text-accent-green hover:text-accent-green/80 transition-colors inline-flex items-center group"
-            aria-label={viewAllText}
+            aria-label={resolvedViewAllText}
           >
-            {viewAllText}
+            {resolvedViewAllText}
             <ArrowRightIcon className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform duration-200 ease-in-out" />
           </button>
         </div>

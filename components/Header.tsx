@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { NAV_ITEMS_MAIN } from '../constants';
+import { useTranslation } from 'react-i18next';
 import { PlusIcon, SunIcon, MoonIcon } from './icons';
 import { NavItem as NavItemType } from '../types';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface NavItemProps {
   item: NavItemType;
@@ -20,8 +21,8 @@ const NavItem = React.forwardRef<HTMLButtonElement, NavItemProps>(({ item, isAct
     onMouseLeave={onMouseLeave}
     className={`p-2 rounded-full transition-colors text-sm font-medium relative flex items-center justify-center
       ${isActive 
-        ? 'text-text-primary dark:text-dark-text-primary' // Active icon color
-        : 'text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary' // Inactive and hover icon color
+        ? 'text-text-primary dark:text-dark-text-primary'
+        : 'text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary'
       }`}
     aria-label={item.name}
     aria-current={isActive ? 'page' : undefined}
@@ -36,17 +37,16 @@ export const Header: React.FC<{
   theme: string;
   toggleTheme: (event?: React.MouseEvent) => void;
 }> = ({ currentPage, setCurrentPage, theme, toggleTheme }) => {
-  
-  const navigate = useNavigate();
-  const location = useLocation();
+  const { t } = useTranslation();
+  const { navItems } = usePortfolio();
   const navContainerRef = useRef<HTMLElement>(null);
   const activePillRef = useRef<HTMLDivElement>(null);
   const navItemRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [hoveredItemId, setHoveredItemId] = useState<string | null>(null);
 
   useEffect(() => {
-    navItemRefs.current = navItemRefs.current.slice(0, NAV_ITEMS_MAIN.length);
-  }, []);
+    navItemRefs.current = navItemRefs.current.slice(0, navItems.length);
+  }, [navItems.length]);
 
   const updatePillStyles = (
     pillEl: HTMLDivElement | null,
@@ -85,8 +85,6 @@ export const Header: React.FC<{
 
   useEffect(() => {
     const calculatePillPositions = () => {
-      // Determine the target for the active pill:
-      // If an item is hovered, target that. Otherwise, target the current page.
       const targetItemIdForPill = hoveredItemId || currentPage;
       
       updatePillStyles(
@@ -94,7 +92,7 @@ export const Header: React.FC<{
         targetItemIdForPill, 
         navItemRefs, 
         navContainerRef.current, 
-        NAV_ITEMS_MAIN
+        navItems
       );
     };
 
@@ -104,7 +102,7 @@ export const Header: React.FC<{
     return () => {
       window.removeEventListener('resize', calculatePillPositions);
     };
-  }, [currentPage, hoveredItemId, theme]);
+  }, [currentPage, hoveredItemId, theme, navItems]);
 
 
   const handleNavClick = (itemId: string) => {
@@ -116,7 +114,7 @@ export const Header: React.FC<{
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <nav ref={navContainerRef} className="relative flex items-center">
-            {NAV_ITEMS_MAIN.map((item, index) => (
+            {navItems.map((item, index) => (
               <NavItem 
                 key={item.id}
                 ref={el => { navItemRefs.current[index] = el; }}
@@ -130,10 +128,11 @@ export const Header: React.FC<{
             <div ref={activePillRef} className="nav-active-pill"></div>
           </nav>
           <div className="flex items-center space-x-3">
+            <LanguageSwitcher />
             <button
               type="button"
               onClick={(e) => toggleTheme(e)}
-              aria-label={theme === 'light' ? "Switch to dark mode" : "Switch to light mode"}
+              aria-label={theme === 'light' ? t('common.switchToDark') : t('common.switchToLight')}
               className="group text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary p-2 rounded-full transition-colors hover:bg-card-hover dark:hover:bg-dark-card-hover"
             >
               {theme === 'light' ? <MoonIcon className="w-5 h-5" /> : <SunIcon className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:rotate-180" />}
@@ -143,7 +142,7 @@ export const Header: React.FC<{
               className="flex items-center bg-button-primary-bg dark:bg-dark-button-primary-bg text-button-primary-text dark:text-dark-button-primary-text hover:bg-button-primary-hover dark:hover:bg-dark-button-primary-hover text-sm font-medium py-2 px-3 rounded-lg transition-colors"
             >
               <PlusIcon className="w-4 h-4 mr-1.5" />
-              Hire Me
+              {t('common.hireMe')}
             </button>
           </div>
         </div>

@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { PERSONAL_INFO } from '../constants';
+import { PersonalInfo } from '../types';
 
 interface IntroAnimationProps {
   onAnimationComplete: () => void;
+  personalInfo: Pick<PersonalInfo, 'introLetter1' | 'introLetter2' | 'introTagline'>;
 }
 
-export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onAnimationComplete }) => {
-  const [animationState, setAnimationState] = useState('entering'); // entering -> static -> exiting
+export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onAnimationComplete, personalInfo }) => {
+  const [animationState, setAnimationState] = useState('entering');
   const {
     introLetter1 = 'L',
     introLetter2 = 'U',
     introTagline = 'Pirate • Dream Chaser',
-  } = PERSONAL_INFO;
+  } = personalInfo;
 
   useEffect(() => {
-    // This timer marks the end of the initial letter/line animations
     const enterTimer = setTimeout(() => {
       setAnimationState('static');
     }, 1500);
 
-    // This timer starts the fade-out of the entire container
     const staticTimer = setTimeout(() => {
       setAnimationState('exiting');
     }, 2000);
 
-    // This timer unmounts the component after the fade-out is complete
     const exitTimer = setTimeout(() => {
       onAnimationComplete();
     }, 2800);
@@ -53,7 +51,6 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onAnimationCompl
       className={`fixed inset-0 z-[100] flex items-center justify-center bg-background dark:bg-dark-background transition-opacity duration-800 ease-in-out ${getContainerClasses()}`}
       aria-hidden="true"
     >
-      {/* Background design (developer + creator vibe) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="intro-bg-grid absolute inset-0" />
         <div className="intro-blob intro-blob--left absolute -left-12 -top-12 w-[260px] h-[260px] sm:-left-24 sm:-top-24 sm:w-[420px] sm:h-[420px]" />

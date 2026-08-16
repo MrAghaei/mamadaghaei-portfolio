@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 // import React, { useState, useCallback } from 'react';
 import { PlusIcon, /* DocumentDuplicateIcon, */ CheckBadgeIcon, InstagramIcon } from './icons';
 import { HeroProps } from '../types'; // Import HeroProps
@@ -21,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({
   animatedNameJapanese,
   setCurrentPage,
 }) => {
-  // const [emailCopied, setEmailCopied] = useState(false);
+  const { t } = useTranslation();
   const { visitorCount, loading, error } = useVisitorCount();
 
   // const copyEmail = useCallback(() => {
@@ -49,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({
             </span> */}
           </div>
           <h1 className="animated-item anim-fadeInUp anim-delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-text-primary dark:text-dark-text-primary tracking-tight">
-            I'm{" "}
+            {t('common.im')}{" "}
             <AnimatedKrishnaText
               text={name}
               className="ml-1"
@@ -70,17 +71,17 @@ export const Hero: React.FC<HeroProps> = ({
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-button-primary-text dark:text-dark-button-primary-text bg-button-primary-bg dark:bg-dark-button-primary-bg hover:bg-button-primary-hover dark:hover:bg-dark-button-primary-hover rounded-lg transition-colors focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700"
             >
               <PlusIcon className="w-4 h-4 mr-2" />
-              Hire Me
+              {t('common.hireMe')}
             </button>
             <a
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-button-secondary-text dark:text-dark-button-secondary-text bg-button-secondary-bg dark:bg-dark-button-secondary-bg hover:bg-button-secondary-hover dark:hover:bg-dark-button-secondary-hover rounded-lg transition-colors focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-              aria-label="Visit Instagram"
+              aria-label={t('common.visitInstagram')}
             >
               <InstagramIcon className="w-4 h-4 mr-2" />
-              Instagram
+              {t('common.instagram')}
             </a>
             {/* <button
               onClick={copyEmail}
