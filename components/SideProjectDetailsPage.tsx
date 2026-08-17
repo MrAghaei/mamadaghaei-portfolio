@@ -15,7 +15,7 @@ export const SideProjectDetailsPage: React.FC<{
   const { sideProjectId } = useParams<{ sideProjectId: string }>();
 
   if (!sideProjectId) {
-    return <Navigate to="/products" replace />;
+    return <Navigate to="/projects" replace />;
   }
 
   const sideProject = sideProjects.find((p) => p.id === sideProjectId);
@@ -28,10 +28,10 @@ export const SideProjectDetailsPage: React.FC<{
           {t("common.productNotFoundDescription")}
         </p>
         <button
-          onClick={() => setCurrentPage("products")}
+          onClick={() => setCurrentPage("projects")}
           className="px-4 py-2 bg-button-primary-bg text-button-primary-text rounded-lg hover:bg-button-primary-hover"
         >
-          {t("common.viewAllProducts")}
+          {t("common.viewAllProjects")}
         </button>
       </div>
     );
@@ -41,11 +41,11 @@ export const SideProjectDetailsPage: React.FC<{
     <div className="space-y-16">
       <div className="animated-item anim-fadeInUp">
         <button
-          onClick={() => setCurrentPage("products")}
+          onClick={() => setCurrentPage("projects")}
           className="inline-flex items-center text-sm font-medium text-text-secondary dark:text-dark-text-secondary hover:text-text-primary dark:hover:text-dark-text-primary transition-colors group"
         >
           <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-          {t("common.backToProducts")}
+          {t("common.backToProjects")}
         </button>
       </div>
 

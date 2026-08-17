@@ -11,12 +11,21 @@ export interface NavItem {
   icon: React.ComponentType<IconProps>;
 }
 
+export interface ExperienceEntry {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  highlights: string[];
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
   bio: string;
   imageUrl: string;
   email: string;
+  phone?: string;
   /** Text spinning around the profile image on the home hero. Falls back to name if omitted. */
   circularText?: string;
   /** Letter spacing for the circular text (CSS value, e.g. "0.9em", "4px"). */
@@ -36,7 +45,7 @@ export interface PersonalInfo {
   aboutPageImageUrl: string;
   projectsPageIntro: string;
   sideProjectsPageIntro: string;
-  productsPageIntro?: string; // Optional: Intro for the new Products page
+  servicesPageIntro?: string;
   hireMePageTitle: string; // For Hire Me page
   hireMePageSubtitle: string; // For Hire Me page
   githubUsername?: string; // Added for GitHub contributions
@@ -72,6 +81,13 @@ export interface Project {
   overview?: string; // Main introductory paragraph on detail page
   problemStatement?: ProjectStatement;
   solutionStatement?: ProjectStatement;
+}
+
+export interface Service {
+  id: string;
+  iconComponent: React.ComponentType<IconProps>;
+  iconBgColor: string;
+  accentClass: string;
 }
 
 export interface SideProject {
@@ -119,7 +135,6 @@ export interface HeroProps {
   bio: string;
   imageUrl: string;
   email: string;
-  instagramUrl: string;
   circularText?: string;
   circularTextLetterSpacing?: string;
   animatedNameEnglish?: string;
@@ -134,7 +149,8 @@ export interface CallToActionProps {
 
 export interface AboutPageProps {
   personalInfo: PersonalInfo;
-  sideProjects: SideProject[];
+  projects: Project[];
+  experience: ExperienceEntry[];
   email: string;
   setCurrentPage: (pageId: string, projectId?: string) => void;
   theme: "light" | "dark"; // Updated theme prop type
@@ -143,16 +159,24 @@ export interface AboutPageProps {
 
 export interface ProjectsPageProps {
   projects: Project[];
-  sideProjects: SideProject[];
   email: string;
   setCurrentPage: (pageId: string, projectId?: string) => void;
 }
 
-export interface ProductsPageProps {
-  // New Props for Products Page
-  sideProjects: SideProject[];
-  personalInfo: Pick<PersonalInfo, "email" | "productsPageIntro">; // Only need email and intro
+export interface ServicesPageProps {
+  services: Service[];
+  personalInfo: Pick<PersonalInfo, "email" | "servicesPageIntro">;
   setCurrentPage: (pageId: string, projectId?: string) => void;
+}
+
+export interface ServicesSectionProps {
+  services: Service[];
+  title?: string;
+  subtitle?: string;
+  maxItems?: number;
+  onViewAllClick?: () => void;
+  viewAllText?: string;
+  onHireClick?: () => void;
 }
 
 export interface HireMePageProps {

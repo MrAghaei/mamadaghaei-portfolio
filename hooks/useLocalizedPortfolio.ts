@@ -7,6 +7,8 @@ import {
   SKILLS,
   PERSONAL_INFO,
   DEVELOPER_CREDIT,
+  EXPERIENCE,
+  SERVICES,
 } from "../constants";
 import type {
   NavItem,
@@ -14,6 +16,7 @@ import type {
   Project,
   SideProject,
   Skill,
+  ExperienceEntry,
 } from "../types";
 
 const mapProject = (
@@ -90,6 +93,25 @@ const mapSideProject = (
   };
 };
 
+const mapExperience = (
+  entry: ExperienceEntry,
+  t: TFunction
+): ExperienceEntry => {
+  const base = `experience.${entry.id}`;
+  const highlights = t(`${base}.highlights`, {
+    returnObjects: true,
+    defaultValue: entry.highlights,
+  }) as string[];
+
+  return {
+    ...entry,
+    company: t(`${base}.company`, { defaultValue: entry.company }),
+    role: t(`${base}.role`, { defaultValue: entry.role }),
+    period: t(`${base}.period`, { defaultValue: entry.period }),
+    highlights: Array.isArray(highlights) ? highlights : entry.highlights,
+  };
+};
+
 export const useLocalizedPortfolio = () => {
   const { t, i18n } = useTranslation();
 
@@ -104,9 +126,8 @@ export const useLocalizedPortfolio = () => {
       name: t("personalInfo.name", { defaultValue: PERSONAL_INFO.name }),
       title: t("personalInfo.title", { defaultValue: PERSONAL_INFO.title }),
       bio: t("personalInfo.bio", { defaultValue: PERSONAL_INFO.bio }),
-      circularText: t("personalInfo.circularText", {
-        defaultValue: PERSONAL_INFO.circularText,
-      }),
+      // SVG textPath only renders Latin script reliably; keep English ring in all locales.
+      circularText: PERSONAL_INFO.circularText,
       introLetter1: t("personalInfo.introLetter1", {
         defaultValue: PERSONAL_INFO.introLetter1,
       }),
@@ -128,8 +149,8 @@ export const useLocalizedPortfolio = () => {
       sideProjectsPageIntro: t("personalInfo.sideProjectsPageIntro", {
         defaultValue: PERSONAL_INFO.sideProjectsPageIntro,
       }),
-      productsPageIntro: t("personalInfo.productsPageIntro", {
-        defaultValue: PERSONAL_INFO.productsPageIntro,
+      servicesPageIntro: t("personalInfo.servicesPageIntro", {
+        defaultValue: PERSONAL_INFO.servicesPageIntro,
       }),
       hireMePageTitle: t("personalInfo.hireMePageTitle", {
         defaultValue: PERSONAL_INFO.hireMePageTitle,
@@ -146,6 +167,8 @@ export const useLocalizedPortfolio = () => {
 
     const projects = PROJECTS.map((project) => mapProject(project, t, "projects"));
     const sideProjects = SIDE_PROJECTS.map((project) => mapSideProject(project, t));
+    const services = SERVICES;
+    const experience = EXPERIENCE.map((entry) => mapExperience(entry, t));
 
     const skills: Skill[] = SKILLS.map((skill, index) => ({
       ...skill,
@@ -162,6 +185,8 @@ export const useLocalizedPortfolio = () => {
       navItems,
       projects,
       sideProjects,
+      services,
+      experience,
       skills,
       developerCredit,
       isRtl: i18n.dir() === "rtl",

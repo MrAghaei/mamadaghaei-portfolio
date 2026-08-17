@@ -8,16 +8,20 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "products": "Products"
+    "services": "Services"
   },
   "common": {
-    "hireMe": "Hire Me",
+    "hireMe": "Let's Work Together",
+    "viewProjects": "View Projects",
+    "phone": "Phone",
     "instagram": "Instagram",
     "backToHome": "Back to Home",
     "backToProjects": "Back to Projects",
     "backToProducts": "Back to Products",
+    "backToServices": "Back to Services",
     "viewAllProjects": "View All Projects",
     "viewAllProducts": "View All Products",
+    "viewAllServices": "View All Services",
     "viewLiveProject": "View Live Project",
     "open": "Open",
     "goHome": "Go Home",
@@ -46,9 +50,10 @@
     "online": "Online",
     "offline": "Offline",
     "im": "I'm",
+    "imSuffix": "",
     "itsMe": "It's Me,",
     "moreAboutMe": "More About Me",
-    "techStack": "Tech Stack",
+    "techStack": "Skills",
     "availableForWork": "Available for Work",
     "submit": "Submit",
     "submitting": "Submitting...",
@@ -78,8 +83,10 @@
     "visitInstagram": "Visit Instagram",
     "switchToDark": "Switch to dark mode",
     "switchToLight": "Switch to light mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
     "followOn": "Follow on {{name}}",
-    "visitDeveloper": "Visit {{name}} on Instagram",
+    "visitDeveloper": "Visit {{name}} on GitHub",
     "triggerProfileEffect": "Trigger profile image effect",
     "portraitOf": "Portrait of {{name}}",
     "projectPreview": "{{name}} preview",
@@ -94,19 +101,23 @@
     "visitors": "visitors"
   },
   "cta": {
-    "title": "Let's work together.",
-    "subtitle": "Creating innovative web solutions and impactful digital experiences."
+    "title": "Have a project in mind?",
+    "subtitle": "Let's talk about your idea and build something useful together."
   },
   "sections": {
     "featuredProjects": "Featured Projects",
-    "exploreProducts": "Explore My Products",
+    "exploreProducts": "Side Projects",
     "myProjects": "My Projects",
-    "myProjectsSubtitle": "Discover my portfolio, where purposeful interfaces meet captivating design. My work strives to enhance experiences and inspire.",
-    "exploreProductsSubtitle": "Some of the digital products that I worked on as side projects, explore them now",
-    "myProducts": "My Products",
-    "myProductsDefaultSubtitle": "Explore a collection of my digital products and side projects.",
+    "myProjectsSubtitle": "Production work across SaaS platforms, developer tools, dashboards, and full-stack web applications.",
+    "exploreProductsSubtitle": "Additional applications and experiments built alongside client and product work.",
+    "myProducts": "Side Projects",
+    "myProductsDefaultSubtitle": "Smaller applications and tools that complement my main project work.",
     "sideProjects": "Side Projects",
-    "about": "About"
+    "services": "Services",
+    "servicesDefaultSubtitle": "Full-stack development services — from custom web apps and admin panels to backend APIs, SaaS platforms, and improving existing projects.",
+    "servicesHomeSubtitle": "Ways I can help turn your business idea or product need into a real web application.",
+    "about": "About",
+    "experience": "Experience"
   },
   "form": {
     "nameRequired": "Name is required.",
@@ -115,166 +126,299 @@
     "messageRequired": "Message is required.",
     "unexpectedError": "An unexpected error occurred. Please try again.",
     "networkError": "An unexpected network error occurred. Please check your connection and try again.",
+    "missingAccessKey": "The contact form is not configured yet. Please try again later or email directly.",
     "subject": "New Project Inquiry from {{name}}"
   },
+  "hirePage": {
+    "telegramSectionTitle": "Telegram Message",
+    "telegramSectionSubtitle": "The fastest way to reach me — send a direct message on Telegram and let's talk about your project.",
+    "telegramButton": "Message on Telegram",
+    "telegramUsername": "@Mamad_Aghaei"
+  },
   "personalInfo": {
-    "name": "Monkey D. Luffy",
-    "title": "Future Pirate King",
-    "bio": "Captain of the Straw Hat Pirates, adventurer, and lover of meat. Sailing the Grand Line in search of the One Piece!",
-    "circularText": "MONKEY D. LUFFY • PIRATE KING • STRAW HAT • ",
-    "introLetter1": "L",
-    "introLetter2": "U",
-    "introTagline": "Pirate • Dream Chaser",
-    "aboutMeIntro": "Hi! I'm Monkey D. Luffy, captain of the Straw Hat Pirates and future King of the Pirates! I love adventure, my friends, and especially meat. I ate the Gum-Gum Devil Fruit, so my body stretches like rubber! I'm sailing the Grand Line with my amazing crew, searching for the legendary One Piece treasure. I believe in freedom, friendship, and never giving up on your dreams. If you want to join my crew, you better have a dream and be ready for the adventure of a lifetime! Shishishi!",
+    "name": "Mohammad Aghaei",
+    "title": "Full-Stack Engineer",
+    "bio": "I build production-ready web applications across the frontend, backend, database, and infrastructure layers.",
+    "circularText": "MOHAMMAD AGHAEI • FULL-STACK ENGINEER • ",
+    "introLetter1": "M",
+    "introLetter2": "A",
+    "introTagline": "Full-Stack • Web Engineer",
+    "aboutMeIntro": "I am a Full-Stack Engineer focused on building modern web applications with TypeScript and the JavaScript ecosystem.",
     "aboutMeDetailed": [
-      "Luffy set sail from Foosha Village to find the legendary treasure, One Piece. Along the way, he gathered a loyal crew, defeated powerful enemies, and made friends all over the world.",
-      "When not fighting Marines or rival pirates, Luffy enjoys eating, napping, and having fun with his crew. He believes in freedom, friendship, and never giving up on his dreams!",
-      "Luffy possesses the power of the Gum-Gum Fruit, making his body stretch like rubber. He's also mastered all three types of Haki, making him one of the most formidable pirates on the seas.",
-      "He has a knack for turning enemies into allies, inspiring others with his unwavering spirit and simple honesty.",
-      "Luffy has a bounty that keeps rising, currently one of the highest in the world, and is recognized as one of the Worst Generation.",
-      "He has led the Straw Hat Pirates through legendary battles at places like Alabasta, Enies Lobby, Marineford, Dressrosa, Whole Cake Island, and Wano.",
-      "Luffy's dream is not just to find the One Piece, but to live a life of complete freedom and help his friends achieve their dreams too.",
-      "Favorite foods: Meat (all kinds), fish, and anything Sanji cooks!",
-      "Famous catchphrases: 'I'm gonna be King of the Pirates!' and 'I want to eat meat!'"
+      "I work across the frontend and backend, with experience building dashboards, SaaS applications, REST APIs, multi-tenant systems, authentication and authorization systems, data-driven interfaces, and production infrastructure.",
+      "My main frontend technologies are React, Next.js, TypeScript and Tailwind CSS. On the backend I work with Node.js, NestJS, Prisma, Drizzle and PostgreSQL.",
+      "I also work with Docker, Linux and CI/CD, allowing me to work across the complete lifecycle of a web application."
     ],
-    "projectsPageIntro": "Check out my greatest adventures and pirate achievements! Each project brought me closer to my dream of becoming Pirate King.",
-    "sideProjectsPageIntro": "Some of the wild side quests and inventions my crew and I have tackled on our journey!",
-    "productsPageIntro": "Explore the unique gadgets, ships, and treasures we've collected or built during our adventures!",
-    "hireMePageTitle": "Join My Crew!",
-    "hireMePageSubtitle": "Got a dream? Want to sail the Grand Line? Send me a message and maybe you can join the Straw Hat Pirates!"
+    "projectsPageIntro": "Selected projects across frontend, backend, and full-stack development — from SaaS platforms to developer tools.",
+    "sideProjectsPageIntro": "Additional web applications and tools built alongside client work and personal experiments.",
+    "servicesPageIntro": "Full-stack development services — from custom web applications and admin panels to backend APIs, SaaS platforms, and improving existing projects.",
+    "hireMePageTitle": "Have a project in mind?",
+    "hireMePageSubtitle": "Let's talk about your idea and build something useful together."
   },
   "developerCredit": {
-    "name": "Anand Krishna"
+    "name": "Mohammad Aghaei"
   },
   "skills": [
-    "Gum-Gum Powers",
-    "Haki",
-    "Navigation",
-    "Swordsmanship",
-    "Cooking",
-    "Medical Skills",
-    "Sniping",
-    "Shipwright",
-    "Archaeology",
-    "Music",
-    "Fishman Karate",
-    "Dream Chasing",
-    "Meat Eating",
-    "Friendship"
+    "HTML",
+    "CSS",
+    "SCSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Shadcn UI",
+    "ECharts",
+    "Zod",
+    "TanStack Query",
+    "Redux Toolkit",
+    "Zustand",
+    "React Hook Form",
+    "Vite",
+    "Node.js",
+    "NestJS",
+    "Prisma",
+    "Drizzle",
+    "REST APIs",
+    "PostgreSQL",
+    "SOLID",
+    "Design Patterns",
+    "Monorepo",
+    "Multi-Tenant",
+    "RBAC",
+    "Linux",
+    "Bash",
+    "Docker",
+    "CI/CD",
+    "Git",
+    "GitHub",
+    "Turborepo"
   ],
+  "experience": {
+    "exp-freelance": {
+      "company": "Freelance",
+      "role": "Full-Stack Engineer",
+      "period": "May 2026 – Present",
+      "highlights": [
+        "Working independently on full-stack web applications, including frontend development, backend/API development, database design, and deployment."
+      ]
+    },
+    "exp-wellowork-fullstack": {
+      "company": "WelloWork",
+      "role": "Full-Stack Developer",
+      "period": "Jul 2025 – Dec 2025",
+      "highlights": [
+        "Architected and developed a management dashboard using NestJS and Prisma with RBAC and tenant data isolation in a multi-tenant architecture.",
+        "Optimized client-server synchronization with TanStack Query and Axios, eliminating approximately 40% of redundant network requests and improving perceived loading time by 35%.",
+        "Created onboarding documentation, performed code reviews, and mentored junior developers, reducing average onboarding time by approximately 25%."
+      ]
+    },
+    "exp-wellowork-frontend": {
+      "company": "WelloWork",
+      "role": "Front-end Developer",
+      "period": "Jan 2024 – Jun 2025",
+      "highlights": [
+        "Developed WelloWize, a cognitive assessment platform and multi-tenant SaaS dashboards using React.",
+        "Contributed to and guided development from technical design through implementation and code review.",
+        "Designed backend integration strategies for adaptive and AI-generated data flows.",
+        "Built data-driven analytical dashboards with ECharts and Tailwind CSS for displaying more than 10,000 daily cognitive data points with latency below 150ms."
+      ]
+    },
+    "exp-avand": {
+      "company": "Avand Lab Rasht",
+      "role": "Front-end Developer",
+      "period": "Dec 2021 – Dec 2023",
+      "highlights": [
+        "Developed B2B management dashboards with React, TypeScript and Vite in a Monorepo architecture.",
+        "Implemented role-based access control and application state management with Zustand.",
+        "Containerized frontend applications with Docker to eliminate configuration differences between environments."
+      ]
+    }
+  },
   "projects": {
-    "project-going-merry": {
-      "name": "Going Merry Ship Upgrade",
-      "description": "Major upgrades and repairs to the Straw Hats' first pirate ship, the Going Merry.",
-      "technologies": ["Woodworking", "Engineering", "Friendship", "Sniper King Magic"],
-      "client": "Straw Hat Pirates",
-      "company": "Water 7 Shipwrights",
-      "projectType": "Ship Repair, Adventure",
-      "year": "Grand Line Era",
-      "tagline": "The Going Merry carried us through countless adventures. She was more than a ship—she was our friend!",
-      "overview": "After many battles and storms, the Going Merry needed serious repairs. With the help of the Water 7 shipwrights (and Usopp's determination), we gave her one last epic journey.",
+    "project-endpoint-forge": {
+      "name": "Endpoint Forge",
+      "description": "A UI-managed mock API workbench for building and running realistic backend endpoints before production APIs are ready.",
+      "technologies": ["TypeScript", "React", "Node.js", "Docker", "REST APIs"],
+      "client": "Bytepute",
+      "company": "Open Source",
+      "projectType": "Developer Tool, Full-Stack",
+      "year": "2025",
+      "tagline": "Model API contracts visually and start a mock server your frontend can call immediately.",
+      "overview": "Endpoint Forge helps teams unblock frontend development when backend contracts are incomplete or still changing. It provides a UI for creating projects, organizing routes, defining responses, and running a mock server that frontend applications can integrate with right away.",
       "problemStatement": {
-        "title": "Ship in Trouble!",
-        "description": "Our beloved ship was falling apart after so many adventures. We needed to fix her or risk losing our way to the Grand Line!"
+        "title": "Frontend blocked on backend availability",
+        "description": "Teams often depend on unfinished APIs, scattered JSON fixtures, or ad hoc mock servers that are hard to share and maintain across a project."
       }
     },
-    "project-meat-inventory": {
-      "name": "Meat Inventory App",
-      "description": "A handy app to track all the meat supplies on the Thousand Sunny.",
-      "technologies": ["React", "Meat Tracking", "Sanji's Recipes", "QR Code"],
-      "client": "Luffy (for Sanji)",
-      "company": "Straw Hat Pirates",
-      "projectType": "Food Management, App",
-      "year": "Grand Line Era",
-      "tagline": "Never run out of meat again!",
-      "overview": "Sanji was tired of Luffy eating all the meat, so we built an app to keep track of supplies. Now, everyone gets their fair share (except when I get hungry).",
+    "project-wellowize": {
+      "name": "WelloWize",
+      "description": "A cognitive assessment platform with multi-tenant SaaS dashboards for analyzing large volumes of assessment data.",
+      "technologies": ["React", "TypeScript", "TanStack Query", "ECharts", "Tailwind CSS"],
+      "client": "WelloWork",
+      "company": "WelloWork",
+      "projectType": "SaaS Platform, Dashboard",
+      "year": "2024 – 2025",
+      "tagline": "Data-driven dashboards for cognitive assessment workflows at scale.",
+      "overview": "WelloWize is a cognitive assessment product built with React, combining multi-tenant SaaS dashboards with analytical views powered by ECharts. I contributed across technical design, frontend implementation, backend integration, and code review.",
       "problemStatement": {
-        "title": "Where's the Meat?",
-        "description": "Meat kept disappearing from the kitchen. We needed a way to track it and keep Luffy honest!"
+        "title": "Visualizing high-volume cognitive data",
+        "description": "The platform needed responsive dashboards capable of presenting large daily datasets with low latency while supporting adaptive and AI-generated data flows."
       }
     },
-    "project-crew-recruitment": {
-      "name": "Pirate Crew Recruitment Portal",
-      "description": "A portal for recruiting new Straw Hat Pirates with big dreams.",
-      "technologies": ["React", "Dream Detection", "Wanted Posters", "Grand Line Map"],
-      "client": "Monkey D. Luffy",
-      "company": "Straw Hat Pirates",
-      "projectType": "Recruitment, Adventure",
-      "year": "Grand Line Era",
-      "tagline": "Got a dream? Join my crew!",
-      "overview": "We needed more nakama for our journey. This portal lets dreamers from all over the world apply to join the Straw Hat Pirates. Only those with true spirit make the cut!",
+    "project-physitoo": {
+      "name": "Physitoo",
+      "description": "A home healthcare platform focused on connecting patients with physiotherapy and rehabilitation services.",
+      "technologies": ["React", "TypeScript", "REST APIs", "Tailwind CSS"],
+      "projectType": "Web Application, Healthcare",
+      "year": "2023",
+      "tagline": "Digital workflows for home healthcare and physiotherapy services.",
+      "overview": "Physitoo is a healthcare platform for home physiotherapy services. The work involved building structured user-facing flows and integrating with backend services to support service management and patient-facing experiences.",
       "problemStatement": {
-        "title": "Need More Nakama!",
-        "description": "The Grand Line is tough. We need strong, loyal friends to help us reach the end!"
-      }
-    },
-    "project-grand-line-map": {
-      "name": "Grand Line Navigation System",
-      "description": "A high-tech map and log pose tracker for navigating the Grand Line.",
-      "technologies": ["Log Pose", "Weather Science", "Nami's Cartography", "React"],
-      "client": "Nami",
-      "company": "Straw Hat Pirates",
-      "projectType": "Navigation, Mapping",
-      "year": "Grand Line Era",
-      "tagline": "Never get lost again! (Unless Luffy's steering)",
-      "overview": "Nami built a navigation system to help us survive the Grand Line's crazy weather and islands. Now we only get lost when Luffy ignores her directions!",
-      "problemStatement": {
-        "title": "Lost at Sea",
-        "description": "The Grand Line is full of surprises. We needed a way to track our journey and avoid danger!"
+        "title": "Digitizing home healthcare coordination",
+        "description": "The product needed reliable web interfaces to support service discovery, coordination, and operational workflows for home healthcare providers."
       }
     }
   },
+  "services": {
+    "idealForLabel": "Ideal for",
+    "technologiesLabel": "Technologies",
+    "discussProject": "Discuss this service",
+    "custom-web-app": {
+      "title": "Custom Web Application Development",
+      "description": "Turn business ideas and workflows into a dedicated web application.",
+      "highlights": [
+        "When your business needs more than a simple website, I can build the frontend, backend, API, and database as one integrated product."
+      ],
+      "idealFor": [
+        "Internal systems",
+        "Platforms",
+        "Web applications",
+        "SaaS products"
+      ]
+    },
+    "admin-panel": {
+      "title": "Admin Panel Design & Development",
+      "description": "Build professional admin panels for managing users, data, and business workflows.",
+      "highlights": [
+        "Data-driven panels with tables, filters, charts, forms, roles, and access levels — with a strong focus on performance and user experience."
+      ],
+      "idealFor": [
+        "Management dashboards",
+        "B2B admin panels",
+        "Data-driven systems",
+        "User & access management"
+      ]
+    },
+    "backend-api": {
+      "title": "Backend & API Development",
+      "description": "Design and implement backend services and APIs for your website or application.",
+      "highlights": [
+        "Backend structure, database design, REST APIs, authentication, authorization, and core business logic with a scalable architecture."
+      ],
+      "technologies": [
+        "Node.js",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Drizzle"
+      ],
+      "idealFor": [
+        "REST APIs",
+        "Authentication",
+        "Authorization",
+        "Scalable architecture"
+      ]
+    },
+    "saas-multi-tenant": {
+      "title": "SaaS & Multi-Tenant Systems",
+      "description": "Build SaaS products with multi-tenant architecture and access control.",
+      "highlights": [
+        "For products used by multiple companies, teams, or customers on one platform, I design systems with data isolation, roles, and permission layers."
+      ],
+      "idealFor": [
+        "SaaS products",
+        "Multi-tenant architecture",
+        "RBAC",
+        "Data isolation"
+      ]
+    },
+    "existing-projects": {
+      "title": "Existing Project Development & Improvement",
+      "description": "Bug fixes, new features, and improvements for existing projects.",
+      "highlights": [
+        "If you already have a project, I can help add features, refactor code, fix frontend or backend issues, and improve performance."
+      ],
+      "idealFor": [
+        "Bug fixes",
+        "New features",
+        "Refactoring",
+        "Performance improvements"
+      ]
+    },
+    "deployment-infrastructure": {
+      "title": "Project Deployment & Infrastructure",
+      "description": "Prepare and deploy your project for production environments.",
+      "highlights": [
+        "Project setup with Docker, Linux and Nginx configuration, environment management, and CI/CD pipelines for reliable deployments."
+      ],
+      "technologies": [
+        "Docker",
+        "Linux",
+        "Nginx",
+        "CI/CD"
+      ],
+      "idealFor": [
+        "Production deployment",
+        "Environment management",
+        "DevOps",
+        "Reliable deployments"
+      ]
+    }
+  },
   "sideProjects": {
-    "side-1": {
-      "name": "Wanted Poster Generator",
-      "tag": "OPEN SOURCE",
-      "linkText": "Try Now",
-      "description": "Create your own pirate wanted poster! Upload a photo and get your bounty.",
+    "side-schematic-form-builder": {
+      "name": "Schematic Form Builder",
+      "tag": "LIVE DEMO",
+      "linkText": "View Demo",
+      "description": "A schematic form builder for defining and previewing dynamic form layouts in the browser.",
       "year": "2024",
       "projectType": "Web App",
-      "tagline": "Make yourself look dangerous — even if you just ate meat.",
-      "overview": "A fun demo product page showing how side projects can open a full details view in this portfolio template.",
-      "technologies": ["React", "Canvas", "Typography"],
+      "tagline": "Design form structures visually before wiring them into an app.",
+      "overview": "An interactive form builder that lets developers define fields, layout, and structure for dynamic forms with a live preview.",
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS"],
       "keyFeatures": [
-        "Upload a face and generate a poster",
-        "Customize bounty text",
-        "Export as image"
+        "Visual form layout editing",
+        "Live preview of form structure",
+        "Reusable field configuration"
       ]
     },
-    "side-2": {
-      "name": "Devil Fruit Encyclopedia",
-      "tag": "LIVE DEMO",
-      "linkText": "Explore",
-      "description": "Browse all known Devil Fruits and their powers. Beware of side effects!",
+    "side-jobgraph": {
+      "name": "JobGraph",
+      "tag": "FULL-STACK",
+      "linkText": "View on GitHub",
+      "description": "A full-stack job tracking application with separate frontend and backend repositories.",
       "year": "2025",
       "projectType": "Web App",
-      "tagline": "Know every fruit before you bite it.",
-      "overview": "Example product with richer metadata for the details page.",
-      "technologies": ["React", "Search", "Content"]
-    },
-    "side-3": {
-      "name": "Zoro's Sword Tracker",
-      "tag": "Live on Play Store",
-      "linkText": "Play Store",
-      "description": "Keep track of all swords Zoro has owned (and lost).",
-      "year": "2026",
-      "projectType": "Android App",
-      "tagline": "Never lose a sword again (or do, and still track it).",
-      "overview": "Demo of Play Store metrics badges (downloads + average rating) on product cards and detail pages.",
-      "technologies": ["Android", "Flutter"],
+      "tagline": "Track job applications with a dedicated frontend and API backend.",
+      "overview": "JobGraph includes a React frontend and a dedicated backend service for managing job search data, application status, and related workflows.",
+      "technologies": ["React", "TypeScript", "Node.js", "REST APIs"],
       "keyFeatures": [
-        "Log every sword in the collection",
-        "Mark lost / found status",
-        "Share bounty-ready screenshots"
+        "Application tracking interface",
+        "Dedicated API backend",
+        "Structured job search workflow"
       ]
     },
-    "side-4": {
-      "name": "Chopper's Medical Kit",
-      "tag": "HOBBY PROJECT",
-      "linkText": "View Kit",
-      "description": "A digital guide to Chopper's favorite remedies and medicines.",
-      "year": "2023",
-      "projectType": "Web Tool"
+    "side-germany-train-stations": {
+      "name": "Germany Train Stations",
+      "tag": "LIVE DEMO",
+      "linkText": "View Demo",
+      "description": "An interactive map application for exploring Germany train station data.",
+      "year": "2024",
+      "projectType": "Web App",
+      "tagline": "Map-based exploration of train station datasets.",
+      "overview": "A frontend application built to visualize and explore Germany train station data with map-based interaction and filtering.",
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS"]
     }
   }
 }

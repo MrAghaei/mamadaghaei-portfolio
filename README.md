@@ -50,7 +50,7 @@ Update:
 - `SIDE_PROJECTS` — products / side projects (optional `playStoreStats`, `overview`, `images`, etc.)
 - `SOCIAL_LINKS` — Instagram / LinkedIn / GitHub
 - `SKILLS` — tech stack badges
-- `WEB3FORMS_ACCESS_KEY` — your key from [web3forms.com](https://web3forms.com)
+- `VITE_WEB3FORMS_ACCESS_KEY` in `.env` (or fallback in `constants.ts`) — your key from [web3forms.com](https://web3forms.com)
 
 ### 2. Images — `assets/`
 

@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { ProjectsPageProps } from '../types';
 import { SectionTitle } from './SectionTitle';
 import { ProjectCard } from './ProjectCard';
-import { SideProjectsSection } from './SideProjectsSection';
 import { CallToAction } from './CallToAction';
 
-export const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects, sideProjects, email, setCurrentPage }) => {
+export const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects, email, setCurrentPage }) => {
   const { t } = useTranslation();
 
   return (
@@ -29,12 +28,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects, sideProjec
         </div>
       </section>
 
-      <SideProjectsSection 
-        sideProjects={sideProjects} 
-        title={t('sections.exploreProducts')}
-        subtitle={t('sections.exploreProductsSubtitle')}
-      />
-      
       <CallToAction email={email} setCurrentPage={setCurrentPage} />
     </div>
   );
