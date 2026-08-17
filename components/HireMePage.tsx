@@ -48,6 +48,13 @@ export const HireMePage: React.FC<HireMePageProps> = ({ personalInfo, socialLink
       return;
     }
     
+    const accessKey = WEB3FORMS_ACCESS_KEY.trim();
+    if (!accessKey) {
+      setStatus('error');
+      setErrors({ form: t('form.missingAccessKey') });
+      return;
+    }
+
     setStatus('loading');
     setErrors({});
 
@@ -55,7 +62,7 @@ export const HireMePage: React.FC<HireMePageProps> = ({ personalInfo, socialLink
     formPayload.append("name", formData.name);
     formPayload.append("email", formData.email);
     formPayload.append("message", formData.message);
-    formPayload.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formPayload.append("access_key", accessKey);
     formPayload.append("subject", t('form.subject', { name: formData.name }));
     formPayload.append("from_name", personalInfo.name);
     formPayload.append("replyto", formData.email);

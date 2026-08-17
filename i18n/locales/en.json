@@ -118,6 +118,7 @@
     "messageRequired": "Message is required.",
     "unexpectedError": "An unexpected error occurred. Please try again.",
     "networkError": "An unexpected network error occurred. Please check your connection and try again.",
+    "missingAccessKey": "The contact form is not configured yet. Please try again later or email directly.",
     "subject": "New Project Inquiry from {{name}}"
   },
   "personalInfo": {

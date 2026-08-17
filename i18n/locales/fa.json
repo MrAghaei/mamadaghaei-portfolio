@@ -118,6 +118,7 @@
     "messageRequired": "پیام الزامی است.",
     "unexpectedError": "خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کنید.",
     "networkError": "خطای شبکه غیرمنتظره‌ای رخ داد. لطفاً اتصال خود را بررسی کنید و دوباره تلاش کنید.",
+    "missingAccessKey": "فرم تماس هنوز پیکربندی نشده است. لطفاً بعداً دوباره تلاش کنید یا مستقیماً ایمیل بزنید.",
     "subject": "درخواست پروژه جدید از {{name}}"
   },
   "personalInfo": {
@@ -183,7 +184,7 @@
     "exp-freelance": {
       "company": "فریلنس",
       "role": "مهندس فول‌استک",
-      "period": "مه ۱۴۰۵ – اکنون",
+      "period": "اردیبهشت ۱۴۰۵ – اکنون",
       "highlights": [
         "فعالیت مستقل در زمینه توسعه وب‌اپلیکیشن‌های Full-Stack، شامل توسعه Frontend، Backend و API، طراحی دیتابیس و استقرار پروژه."
       ]
@@ -253,7 +254,13 @@
     "project-wellowize": {
       "name": "WelloWize",
       "description": "پلتفرم ارزیابی شناختی با داشبوردهای SaaS چندمستاجری برای تحلیل حجم بالای داده‌های ارزیابی.",
-      "technologies": ["React", "TypeScript", "TanStack Query", "ECharts", "Tailwind CSS"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "TanStack Query",
+        "ECharts",
+        "Tailwind CSS"
+      ],
       "client": "WelloWork",
       "company": "WelloWork",
       "projectType": "پلتفرم SaaS، داشبورد",

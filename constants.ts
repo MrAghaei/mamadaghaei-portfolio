@@ -38,7 +38,9 @@ import {
   CloudArrowUpIcon,
 } from "./components/icons";
 
-export const WEB3FORMS_ACCESS_KEY = "";
+export const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+  "a012a738-4102-414c-986b-9d34d720109e";
 
 export const DEVELOPER_CREDIT = {
   name: "Mohammad Aghaei",
