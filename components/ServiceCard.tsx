@@ -1,6 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Service } from '../types';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Service } from "../types";
 
 interface ServiceCardProps {
   service: Service;
@@ -42,7 +42,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <article
-      className={`group relative h-full ${className || ''}`}
+      className={`group relative h-full ${className || ""}`}
       style={style}
     >
       <div
@@ -63,7 +63,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
               </div>
               <div>
                 <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary dark:text-dark-text-secondary">
-                  {String(index + 1).padStart(2, '0')}
+                  {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="text-lg font-bold leading-snug text-text-primary dark:text-dark-text-primary sm:text-xl">
                   {t(`${baseKey}.title`)}
@@ -93,7 +93,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           {resolvedIdealFor.length > 0 ? (
             <div className="mb-5">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-primary dark:text-dark-text-primary">
-                {t('services.idealForLabel')}
+                {t("services.idealForLabel")}
               </p>
               <div className="flex flex-wrap gap-2">
                 {resolvedIdealFor.map((item) => (
@@ -111,7 +111,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           {resolvedTechnologies.length > 0 ? (
             <div className="mb-5">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-primary dark:text-dark-text-primary">
-                {t('services.technologiesLabel')}
+                {t("services.technologiesLabel")}
               </p>
               <div className="flex flex-wrap gap-2">
                 {resolvedTechnologies.map((tech) => (
@@ -131,9 +131,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
               <button
                 type="button"
                 onClick={onHireClick}
-                className="inline-flex items-center text-sm font-medium text-accent-green transition-colors hover:text-accent-green/80 dark:text-dark-accent-green dark:hover:text-dark-accent-green/80"
+                className="inline-flex items-center text-sm font-medium border border-accent-green rounded-full px-3 py-2 text-accent-green transition-all hover:bg-green-500 hover:text-white dark:text-dark-accent-green dark:hover:text-white"
               >
-                {t('services.discussProject')}
+                {t("services.discussProject")}
               </button>
             </div>
           ) : null}

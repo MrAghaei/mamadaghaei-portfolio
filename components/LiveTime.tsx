@@ -9,18 +9,18 @@ export const LiveTime: React.FC = () => {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+      const tehranTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tehran' }));
       
-      const hours = istTime.getHours().toString().padStart(2, '0');
-      const minutes = istTime.getMinutes().toString().padStart(2, '0');
-      const seconds = istTime.getSeconds().toString().padStart(2, '0');
+      const hours = tehranTime.getHours().toString().padStart(2, '0');
+      const minutes = tehranTime.getMinutes().toString().padStart(2, '0');
+      const seconds = tehranTime.getSeconds().toString().padStart(2, '0');
       const locale = i18n.language === 'fa' ? 'fa-IR' : 'en-US';
       const timezoneLabel = new Intl.DateTimeFormat(locale, {
         timeZoneName: 'short',
-        timeZone: 'Asia/Kolkata',
+        timeZone: 'Asia/Tehran',
       })
         .formatToParts(now)
-        .find((part) => part.type === 'timeZoneName')?.value ?? 'IST';
+        .find((part) => part.type === 'timeZoneName')?.value ?? 'IRST';
       
       setTime(`${hours}:${minutes}:${seconds} ${timezoneLabel}`);
     };

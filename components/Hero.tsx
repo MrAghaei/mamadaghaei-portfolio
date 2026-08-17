@@ -2,12 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 // import React, { useState, useCallback } from 'react';
 import { PlusIcon, Squares2X2Icon } from './icons';
+import { PERSONAL_INFO } from '../constants';
 import { HeroProps } from '../types'; // Import HeroProps
 import { CircularText } from './CircularText'; // Import CircularText
 import { AnimatedKrishnaText } from './AnimatedKrishnaText';
-import { VisitorStats } from './VisitorStats';
-import { useVisitorCount } from '../hooks/useVisitorCount';
-import { LiveTime } from './LiveTime';
+// import { VisitorStats } from './VisitorStats';
+// import { useVisitorCount } from '../hooks/useVisitorCount';
+// import { LiveTime } from './LiveTime';
 import { OnlineStatus } from './OnlineStatus';
 
 export const Hero: React.FC<HeroProps> = ({
@@ -22,10 +23,12 @@ export const Hero: React.FC<HeroProps> = ({
   setCurrentPage,
 }) => {
   const { t } = useTranslation();
-  const { visitorCount, loading, error } = useVisitorCount();
+  // const { visitorCount, loading, error } = useVisitorCount();
 
   const circularTextContent =
-    circularText?.trim() || `${name.toUpperCase()} • `.repeat(2);
+    PERSONAL_INFO.circularText?.trim() ||
+    circularText?.trim() ||
+    `${PERSONAL_INFO.name.toUpperCase()} • `.repeat(2);
 
   return (
     <section id="hero" className="py-12 md:py-16">
@@ -42,10 +45,8 @@ export const Hero: React.FC<HeroProps> = ({
             </span> */}
           </div>
           <h1 className="animated-item anim-fadeInUp anim-delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-text-primary dark:text-dark-text-primary tracking-tight">
-            {t('common.im')}{" "}
             <AnimatedKrishnaText
               text={name}
-              className="ml-1"
               krishnaEnglish={animatedNameEnglish}
               krishnaJapanese={animatedNameJapanese}
             />
@@ -53,10 +54,10 @@ export const Hero: React.FC<HeroProps> = ({
           <p className="animated-item anim-fadeInUp anim-delay-200 text-lg text-text-secondary dark:text-dark-text-secondary max-w-xl">
             {bio}
           </p>
-          <div className="animated-item anim-fadeInUp anim-delay-300 flex flex-wrap gap-4">
+          {/* <div className="animated-item anim-fadeInUp anim-delay-300 flex flex-wrap gap-4">
             <VisitorStats count={visitorCount} loading={loading} error={error} />
             <LiveTime />
-          </div>
+          </div> */}
           <div className="animated-item anim-fadeInUp anim-delay-400 flex flex-wrap gap-3 pt-4">
             <button
               onClick={() => setCurrentPage('hire')} // Navigate to HireMePage
@@ -82,13 +83,12 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="relative w-[200px] h-[200px] md:w-[240px] md:h-[240px]">
             <CircularText
               text={circularTextContent}
-              letterSpacing={circularTextLetterSpacing}
-              className="absolute inset-0 w-full h-full animate-spin-slow"
+              className="absolute inset-0 z-[2] w-full h-full"
             />
             <img 
               src={imageUrl} 
               alt={name} 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-card dark:border-dark-card shadow-lg"
+              className="absolute top-1/2 left-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-card dark:border-dark-card shadow-lg"
             />
           </div>
         </div>

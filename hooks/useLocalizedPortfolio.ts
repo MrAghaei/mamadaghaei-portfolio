@@ -126,9 +126,8 @@ export const useLocalizedPortfolio = () => {
       name: t("personalInfo.name", { defaultValue: PERSONAL_INFO.name }),
       title: t("personalInfo.title", { defaultValue: PERSONAL_INFO.title }),
       bio: t("personalInfo.bio", { defaultValue: PERSONAL_INFO.bio }),
-      circularText: t("personalInfo.circularText", {
-        defaultValue: PERSONAL_INFO.circularText,
-      }),
+      // SVG textPath only renders Latin script reliably; keep English ring in all locales.
+      circularText: PERSONAL_INFO.circularText,
       introLetter1: t("personalInfo.introLetter1", {
         defaultValue: PERSONAL_INFO.introLetter1,
       }),

@@ -83,6 +83,8 @@
     "visitInstagram": "Visit Instagram",
     "switchToDark": "Switch to dark mode",
     "switchToLight": "Switch to light mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
     "followOn": "Follow on {{name}}",
     "visitDeveloper": "Visit {{name}} on GitHub",
     "triggerProfileEffect": "Trigger profile image effect",
@@ -126,6 +128,12 @@
     "networkError": "An unexpected network error occurred. Please check your connection and try again.",
     "missingAccessKey": "The contact form is not configured yet. Please try again later or email directly.",
     "subject": "New Project Inquiry from {{name}}"
+  },
+  "hirePage": {
+    "telegramSectionTitle": "Telegram Message",
+    "telegramSectionSubtitle": "The fastest way to reach me — send a direct message on Telegram and let's talk about your project.",
+    "telegramButton": "Message on Telegram",
+    "telegramUsername": "@Mamad_Aghaei"
   },
   "personalInfo": {
     "name": "Mohammad Aghaei",

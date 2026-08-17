@@ -30,9 +30,18 @@ export const AnimatedName: React.FC<AnimatedNameProps> = ({
   }, [idx, intervalMs, options.length]);
 
   return (
-    <span className={`inline-flex align-baseline ${className || ""}`}>
+    <span className={`inline-grid align-baseline ${className || ""}`}>
+      {options.map((option) => (
+        <span
+          key={`ghost-${option}`}
+          className="invisible col-start-1 row-start-1 whitespace-nowrap"
+          aria-hidden="true"
+        >
+          {option}
+        </span>
+      ))}
       <span
-        className={`inline-block will-change-transform transition-all duration-200 ease-out ${
+        className={`col-start-1 row-start-1 inline-block whitespace-nowrap will-change-transform transition-all duration-200 ease-out ${
           phase === "in"
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-1"

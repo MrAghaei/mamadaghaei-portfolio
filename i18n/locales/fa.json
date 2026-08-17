@@ -83,6 +83,8 @@
     "visitInstagram": "بازدید از اینستاگرام",
     "switchToDark": "تغییر به حالت تاریک",
     "switchToLight": "تغییر به حالت روشن",
+    "openMenu": "باز کردن منو",
+    "closeMenu": "بستن منو",
     "followOn": "دنبال کردن در {{name}}",
     "visitDeveloper": "بازدید از {{name}} در گیت‌هاب",
     "triggerProfileEffect": "فعال‌سازی افکت تصویر پروفایل",
@@ -127,11 +129,17 @@
     "missingAccessKey": "فرم تماس هنوز پیکربندی نشده است. لطفاً بعداً دوباره تلاش کنید یا مستقیماً ایمیل بزنید.",
     "subject": "درخواست پروژه جدید از {{name}}"
   },
+  "hirePage": {
+    "telegramSectionTitle": "پیام در تلگرام",
+    "telegramSectionSubtitle": "سریع‌ترین راه برای ارتباط با من — یک پیام مستقیم در تلگرام بفرستید تا درباره پروژه‌تان صحبت کنیم.",
+    "telegramButton": "ارسال پیام در تلگرام",
+    "telegramUsername": "@Mamad_Aghaei"
+  },
   "personalInfo": {
     "name": "محمد آقایی",
     "title": "مهندس فول‌استک",
     "bio": "وب‌اپلیکیشن‌های مدرن و قابل توسعه را از رابط کاربری تا Backend، دیتابیس و زیرساخت توسعه می‌دهم.",
-    "circularText": "محمد آقایی • مهندس فول‌استک • ",
+    "circularText": "MOHAMMAD AGHAEI • FULL-STACK ENGINEER • ",
     "introLetter1": "م",
     "introLetter2": "ح",
     "introTagline": "فول‌استک • توسعه وب",

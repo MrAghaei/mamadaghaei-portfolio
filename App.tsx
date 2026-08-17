@@ -234,7 +234,7 @@ const AppContent: React.FC = () => {
                 services={services}
                 title={t('sections.services')}
                 subtitle={t('sections.servicesHomeSubtitle')}
-                maxItems={3}
+                maxItems={4}
                 onViewAllClick={() => handleSetPage('services')}
                 viewAllText={t('common.viewAllServices')}
                 onHireClick={() => handleSetPage('hire')}

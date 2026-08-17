@@ -546,6 +546,26 @@
                 animation: spin-slow-custom 20s linear infinite;
             }
 
+            .hero-circular-text-ring {
+                direction: ltr;
+                unicode-bidi: isolate;
+                animation: spin-slow-custom 20s linear infinite;
+            }
+
+            .hero-circular-text-label {
+                fill: rgba(60, 60, 67, 0.6);
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", sans-serif;
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+
+            .dark .hero-circular-text-label {
+                fill: rgba(235, 235, 245, 0.6);
+            }
+
             .animated-item {
                 opacity: 0; /* Initial state, animation will override */
             }

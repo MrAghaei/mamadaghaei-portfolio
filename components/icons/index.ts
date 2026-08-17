@@ -59,4 +59,8 @@ export {
   FiSend, // Postman
   FiStar as StarIcon,
   FiDownload as DownloadIcon,
+  FiMenu as MenuIcon,
+  FiX as CloseIcon,
 } from 'react-icons/fi';
+
+export { FaTelegramPlane as TelegramIcon } from 'react-icons/fa';
