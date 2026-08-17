@@ -2,14 +2,14 @@ import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutPageProps } from '../types'; 
 import { SectionTitle } from './SectionTitle';
-import { SideProjectsSection } from './SideProjectsSection'; 
+import { ProjectsSection } from './ProjectsSection';
 import { CallToAction } from './CallToAction';
 import { GitHubContributionsGraph } from './GitHubContributionsGraph';
 import { SkillBadge } from './SkillBadge';
 import { LaptopIcon, BriefcaseIcon } from './icons';
 import { AnimatedName } from './AnimatedName';
 
-export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects, experience, email, setCurrentPage, theme, skills }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, projects, experience, email, setCurrentPage, theme, skills }) => {
   const { t } = useTranslation();
   const [isGlitchBurstActive, setIsGlitchBurstActive] = useState(false);
 
@@ -45,12 +45,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           <div className="lg:w-2/3 space-y-4 animated-item anim-fadeInUp anim-delay-100">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary dark:text-dark-text-primary tracking-tight">
-              {t('common.itsMe')}{" "}
+              {t('common.im')}{" "}
               <AnimatedName
                 english={animatedEnglish}
                 japanese={animatedJapanese}
                 className="ml-1"
               />
+              {t('common.imSuffix')}
             </h1>
             <p className="text-lg text-text-secondary dark:text-dark-text-secondary">
               {personalInfo.aboutMeIntro}
@@ -166,10 +167,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
         <GitHubContributionsGraph username={personalInfo.githubUsername} theme={theme} />
       )}
       
-      <SideProjectsSection 
-        sideProjects={sideProjects} 
-        title={t('sections.myProducts')} 
-      /> 
+      <ProjectsSection
+        projects={projects}
+        setCurrentPage={setCurrentPage}
+        title={t('sections.myProjects')}
+      />
       
       <CallToAction 
         email={email} 

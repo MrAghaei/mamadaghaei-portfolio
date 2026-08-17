@@ -6,12 +6,13 @@ import {
   NavItem,
   Skill,
   ExperienceEntry,
+  Service,
 } from "./types";
 import {
   HomeIcon,
   UserIcon,
   Squares2X2Icon,
-  ShoppingBagIcon,
+  BriefcaseIcon,
   CpuChipIcon,
   RocketLaunchIcon,
   PuzzlePieceIcon,
@@ -35,6 +36,8 @@ import {
   FiPackage,
   FiGitBranch,
   FiLayout,
+  FiRefreshCw,
+  FiShield,
   CloudArrowUpIcon,
 } from "./components/icons";
 
@@ -81,8 +84,8 @@ export const PERSONAL_INFO: PersonalInfo = {
     "Selected projects across frontend, backend, and full-stack development — from SaaS platforms to developer tools.",
   sideProjectsPageIntro:
     "Additional web applications and tools built alongside client work and personal experiments.",
-  productsPageIntro:
-    "Side projects and smaller applications that show how I approach product development outside of main client work.",
+  servicesPageIntro:
+    "Full-stack development services — from custom web applications and admin panels to backend APIs, SaaS platforms, and improving existing projects.",
   hireMePageTitle: "Have a project in mind?",
   hireMePageSubtitle:
     "Let's talk about your idea and build something useful together.",
@@ -98,10 +101,49 @@ export const NAV_ITEMS_MAIN: NavItem[] = [
     icon: Squares2X2Icon,
   },
   {
-    id: "products",
-    name: "Products",
-    href: "#products-page",
-    icon: ShoppingBagIcon,
+    id: "services",
+    name: "Services",
+    href: "#services-page",
+    icon: BriefcaseIcon,
+  },
+];
+
+export const SERVICES: Service[] = [
+  {
+    id: "custom-web-app",
+    iconComponent: RocketLaunchIcon,
+    iconBgColor: "bg-emerald-500/15 dark:bg-emerald-400/15",
+    accentClass: "from-emerald-500/20 to-teal-500/5",
+  },
+  {
+    id: "admin-panel",
+    iconComponent: FiLayout,
+    iconBgColor: "bg-blue-500/15 dark:bg-blue-400/15",
+    accentClass: "from-blue-500/20 to-indigo-500/5",
+  },
+  {
+    id: "backend-api",
+    iconComponent: ServerStackIcon,
+    iconBgColor: "bg-violet-500/15 dark:bg-violet-400/15",
+    accentClass: "from-violet-500/20 to-purple-500/5",
+  },
+  {
+    id: "saas-multi-tenant",
+    iconComponent: FiShield,
+    iconBgColor: "bg-amber-500/15 dark:bg-amber-400/15",
+    accentClass: "from-amber-500/20 to-orange-500/5",
+  },
+  {
+    id: "existing-projects",
+    iconComponent: FiRefreshCw,
+    iconBgColor: "bg-rose-500/15 dark:bg-rose-400/15",
+    accentClass: "from-rose-500/20 to-pink-500/5",
+  },
+  {
+    id: "deployment-infrastructure",
+    iconComponent: CloudArrowUpIcon,
+    iconBgColor: "bg-sky-500/15 dark:bg-sky-400/15",
+    accentClass: "from-sky-500/20 to-cyan-500/5",
   },
 ];
 
@@ -183,34 +225,6 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: "project-kheradkhan",
-    iconComponent: PuzzlePieceIcon,
-    iconBgColor: "bg-teal-600 dark:bg-teal-700",
-    name: "Kheradkhan",
-    description:
-      "A Persian-language highlights manager for importing, organizing, and reviewing book highlights.",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-    ],
-    company: "Personal Project",
-    projectType: "Web Application, SaaS",
-    year: "2024",
-    tagline:
-      "Import, tag, search, and revisit book highlights in Persian.",
-    overview:
-      "Kheradkhan is a Readwise-inspired application focused on Persian-language reading workflows. It supports highlight import, tagging, search, daily review, and authenticated personal libraries with a responsive Next.js interface.",
-    liveLink: "https://kheradkhan.vercel.app",
-    repoLink: "https://github.com/MrAghaei/kheradkhan-v2",
-    problemStatement: {
-      title: "Managing highlights in Persian",
-      description:
-        "Readers needed a dedicated way to collect, organize, and revisit highlights from books and articles in Persian without relying on generic English-first tools.",
-    },
-  },
-  {
     id: "project-wellowize",
     iconComponent: FiBarChart2,
     iconBgColor: "bg-blue-600 dark:bg-blue-700",
@@ -232,6 +246,7 @@ export const PROJECTS: Project[] = [
       "Data-driven dashboards for cognitive assessment workflows at scale.",
     overview:
       "WelloWize is a cognitive assessment product built with React, combining multi-tenant SaaS dashboards with analytical views powered by ECharts. I contributed across technical design, frontend implementation, backend integration, and code review.",
+    liveLink: "https://wellowize.com/",
     problemStatement: {
       title: "Visualizing high-volume cognitive data",
       description:

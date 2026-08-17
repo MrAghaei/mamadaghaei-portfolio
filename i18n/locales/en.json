@@ -8,7 +8,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "products": "Products"
+    "services": "Services"
   },
   "common": {
     "hireMe": "Let's Work Together",
@@ -18,8 +18,10 @@
     "backToHome": "Back to Home",
     "backToProjects": "Back to Projects",
     "backToProducts": "Back to Products",
+    "backToServices": "Back to Services",
     "viewAllProjects": "View All Projects",
     "viewAllProducts": "View All Products",
+    "viewAllServices": "View All Services",
     "viewLiveProject": "View Live Project",
     "open": "Open",
     "goHome": "Go Home",
@@ -48,6 +50,7 @@
     "online": "Online",
     "offline": "Offline",
     "im": "I'm",
+    "imSuffix": "",
     "itsMe": "It's Me,",
     "moreAboutMe": "More About Me",
     "techStack": "Skills",
@@ -108,6 +111,9 @@
     "myProducts": "Side Projects",
     "myProductsDefaultSubtitle": "Smaller applications and tools that complement my main project work.",
     "sideProjects": "Side Projects",
+    "services": "Services",
+    "servicesDefaultSubtitle": "Full-stack development services — from custom web apps and admin panels to backend APIs, SaaS platforms, and improving existing projects.",
+    "servicesHomeSubtitle": "Ways I can help turn your business idea or product need into a real web application.",
     "about": "About",
     "experience": "Experience"
   },
@@ -137,7 +143,7 @@
     ],
     "projectsPageIntro": "Selected projects across frontend, backend, and full-stack development — from SaaS platforms to developer tools.",
     "sideProjectsPageIntro": "Additional web applications and tools built alongside client work and personal experiments.",
-    "productsPageIntro": "Side projects and smaller applications that show how I approach product development outside of main client work.",
+    "servicesPageIntro": "Full-stack development services — from custom web applications and admin panels to backend APIs, SaaS platforms, and improving existing projects.",
     "hireMePageTitle": "Have a project in mind?",
     "hireMePageSubtitle": "Let's talk about your idea and build something useful together."
   },
@@ -237,20 +243,6 @@
         "description": "Teams often depend on unfinished APIs, scattered JSON fixtures, or ad hoc mock servers that are hard to share and maintain across a project."
       }
     },
-    "project-kheradkhan": {
-      "name": "Kheradkhan",
-      "description": "A Persian-language highlights manager for importing, organizing, and reviewing book highlights.",
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      "company": "Personal Project",
-      "projectType": "Web Application, SaaS",
-      "year": "2024",
-      "tagline": "Import, tag, search, and revisit book highlights in Persian.",
-      "overview": "Kheradkhan is a Readwise-inspired application focused on Persian-language reading workflows. It supports highlight import, tagging, search, daily review, and authenticated personal libraries with a responsive Next.js interface.",
-      "problemStatement": {
-        "title": "Managing highlights in Persian",
-        "description": "Readers needed a dedicated way to collect, organize, and revisit highlights from books and articles in Persian without relying on generic English-first tools."
-      }
-    },
     "project-wellowize": {
       "name": "WelloWize",
       "description": "A cognitive assessment platform with multi-tenant SaaS dashboards for analyzing large volumes of assessment data.",
@@ -278,6 +270,102 @@
         "title": "Digitizing home healthcare coordination",
         "description": "The product needed reliable web interfaces to support service discovery, coordination, and operational workflows for home healthcare providers."
       }
+    }
+  },
+  "services": {
+    "idealForLabel": "Ideal for",
+    "technologiesLabel": "Technologies",
+    "discussProject": "Discuss this service",
+    "custom-web-app": {
+      "title": "Custom Web Application Development",
+      "description": "Turn business ideas and workflows into a dedicated web application.",
+      "highlights": [
+        "When your business needs more than a simple website, I can build the frontend, backend, API, and database as one integrated product."
+      ],
+      "idealFor": [
+        "Internal systems",
+        "Platforms",
+        "Web applications",
+        "SaaS products"
+      ]
+    },
+    "admin-panel": {
+      "title": "Admin Panel Design & Development",
+      "description": "Build professional admin panels for managing users, data, and business workflows.",
+      "highlights": [
+        "Data-driven panels with tables, filters, charts, forms, roles, and access levels — with a strong focus on performance and user experience."
+      ],
+      "idealFor": [
+        "Management dashboards",
+        "B2B admin panels",
+        "Data-driven systems",
+        "User & access management"
+      ]
+    },
+    "backend-api": {
+      "title": "Backend & API Development",
+      "description": "Design and implement backend services and APIs for your website or application.",
+      "highlights": [
+        "Backend structure, database design, REST APIs, authentication, authorization, and core business logic with a scalable architecture."
+      ],
+      "technologies": [
+        "Node.js",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Drizzle"
+      ],
+      "idealFor": [
+        "REST APIs",
+        "Authentication",
+        "Authorization",
+        "Scalable architecture"
+      ]
+    },
+    "saas-multi-tenant": {
+      "title": "SaaS & Multi-Tenant Systems",
+      "description": "Build SaaS products with multi-tenant architecture and access control.",
+      "highlights": [
+        "For products used by multiple companies, teams, or customers on one platform, I design systems with data isolation, roles, and permission layers."
+      ],
+      "idealFor": [
+        "SaaS products",
+        "Multi-tenant architecture",
+        "RBAC",
+        "Data isolation"
+      ]
+    },
+    "existing-projects": {
+      "title": "Existing Project Development & Improvement",
+      "description": "Bug fixes, new features, and improvements for existing projects.",
+      "highlights": [
+        "If you already have a project, I can help add features, refactor code, fix frontend or backend issues, and improve performance."
+      ],
+      "idealFor": [
+        "Bug fixes",
+        "New features",
+        "Refactoring",
+        "Performance improvements"
+      ]
+    },
+    "deployment-infrastructure": {
+      "title": "Project Deployment & Infrastructure",
+      "description": "Prepare and deploy your project for production environments.",
+      "highlights": [
+        "Project setup with Docker, Linux and Nginx configuration, environment management, and CI/CD pipelines for reliable deployments."
+      ],
+      "technologies": [
+        "Docker",
+        "Linux",
+        "Nginx",
+        "CI/CD"
+      ],
+      "idealFor": [
+        "Production deployment",
+        "Environment management",
+        "DevOps",
+        "Reliable deployments"
+      ]
     }
   },
   "sideProjects": {

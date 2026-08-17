@@ -8,6 +8,7 @@ import {
   PERSONAL_INFO,
   DEVELOPER_CREDIT,
   EXPERIENCE,
+  SERVICES,
 } from "../constants";
 import type {
   NavItem,
@@ -149,8 +150,8 @@ export const useLocalizedPortfolio = () => {
       sideProjectsPageIntro: t("personalInfo.sideProjectsPageIntro", {
         defaultValue: PERSONAL_INFO.sideProjectsPageIntro,
       }),
-      productsPageIntro: t("personalInfo.productsPageIntro", {
-        defaultValue: PERSONAL_INFO.productsPageIntro,
+      servicesPageIntro: t("personalInfo.servicesPageIntro", {
+        defaultValue: PERSONAL_INFO.servicesPageIntro,
       }),
       hireMePageTitle: t("personalInfo.hireMePageTitle", {
         defaultValue: PERSONAL_INFO.hireMePageTitle,
@@ -167,6 +168,7 @@ export const useLocalizedPortfolio = () => {
 
     const projects = PROJECTS.map((project) => mapProject(project, t, "projects"));
     const sideProjects = SIDE_PROJECTS.map((project) => mapSideProject(project, t));
+    const services = SERVICES;
     const experience = EXPERIENCE.map((entry) => mapExperience(entry, t));
 
     const skills: Skill[] = SKILLS.map((skill, index) => ({
@@ -184,6 +186,7 @@ export const useLocalizedPortfolio = () => {
       navItems,
       projects,
       sideProjects,
+      services,
       experience,
       skills,
       developerCredit,

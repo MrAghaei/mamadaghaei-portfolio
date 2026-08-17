@@ -1,16 +1,16 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import { useTranslation } from 'react-i18next';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
-import { SideProjectsSection } from './components/SideProjectsSection';
+import { ServicesSection } from './components/ServicesSection';
 import { CallToAction } from './components/CallToAction';
 import { Footer } from './components/Footer';
 import { AboutPage } from './components/AboutPage';
 import { ProjectsPage } from './components/ProjectsPage';
-import { ProductsPage } from './components/ProductsPage';
+import { ServicesPage } from './components/ServicesPage';
 import { HireMePage } from './components/HireMePage';
 import { ProjectDetailsPage } from './components/ProjectDetailsPage';
 import { SideProjectDetailsPage } from './components/SideProjectDetailsPage';
@@ -26,7 +26,7 @@ const AppContent: React.FC = () => {
   const location = useLocation();
   const lenis = useLenis();
   const { t } = useTranslation();
-  const { personalInfo, projects, sideProjects, skills, experience, isRtl } = usePortfolio();
+  const { personalInfo, projects, sideProjects, services, skills, experience, isRtl } = usePortfolio();
   const [showIntro, setShowIntro] = useState(true);
   
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -134,7 +134,7 @@ const AppContent: React.FC = () => {
     }, 150);
   }, [navigate, lenis]);
 
-  const menuTabs = ['home', 'about', 'projects', 'products', 'hire'];
+  const menuTabs = ['home', 'about', 'projects', 'services', 'hire'];
 
   const getCurrentPage = () => {
     const path = location.pathname;
@@ -230,11 +230,14 @@ const AppContent: React.FC = () => {
                 title={t('sections.featuredProjects')}
                 maxItems={3}
               />
-              <SideProjectsSection 
-                sideProjects={sideProjects} 
-                title={t('sections.exploreProducts')} 
-                onViewAllClick={() => handleSetPage('products')}
-                viewAllText={t('common.viewAllProducts')}
+              <ServicesSection
+                services={services}
+                title={t('sections.services')}
+                subtitle={t('sections.servicesHomeSubtitle')}
+                maxItems={3}
+                onViewAllClick={() => handleSetPage('services')}
+                viewAllText={t('common.viewAllServices')}
+                onHireClick={() => handleSetPage('hire')}
               />
               <CallToAction email={personalInfo.email} setCurrentPage={handleSetPage} />
             </>
@@ -243,7 +246,7 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={
             <AboutPage 
               personalInfo={personalInfo} 
-              sideProjects={sideProjects}
+              projects={projects}
               experience={experience}
               email={personalInfo.email} 
               setCurrentPage={handleSetPage} 
@@ -255,19 +258,20 @@ const AppContent: React.FC = () => {
           <Route path="/projects" element={
             <ProjectsPage 
               projects={projects} 
-              sideProjects={sideProjects} 
               email={personalInfo.email} 
               setCurrentPage={handleSetPage} 
             />
           } />
           
-          <Route path="/products" element={
-            <ProductsPage 
-              sideProjects={sideProjects} 
-              personalInfo={{email: personalInfo.email, productsPageIntro: personalInfo.productsPageIntro }} 
-              setCurrentPage={handleSetPage} 
+          <Route path="/services" element={
+            <ServicesPage
+              services={services}
+              personalInfo={{ email: personalInfo.email, servicesPageIntro: personalInfo.servicesPageIntro }}
+              setCurrentPage={handleSetPage}
             />
           } />
+
+          <Route path="/products" element={<Navigate to="/services" replace />} />
 
           <Route path="/product/:sideProjectId" element={
             <SideProjectDetailsPage
