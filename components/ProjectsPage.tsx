@@ -1,18 +1,20 @@
 import React from 'react';
-import { Project, SideProject, ProjectsPageProps } from '../types';
+import { useTranslation } from 'react-i18next';
+import { ProjectsPageProps } from '../types';
 import { SectionTitle } from './SectionTitle';
 import { ProjectCard } from './ProjectCard';
 import { SideProjectsSection } from './SideProjectsSection';
 import { CallToAction } from './CallToAction';
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects, sideProjects, email, setCurrentPage }) => {
+  const { t } = useTranslation();
 
   return (
     <div className="space-y-16 md:space-y-24">
       <section id="my-works-section">
         <SectionTitle 
-          title="My Projects" 
-          subtitle="Discover my portfolio, where purposeful interfaces meet captivating design. My work strives to enhance experiences and inspire."
+          title={t('sections.myProjects')} 
+          subtitle={t('sections.myProjectsSubtitle')}
         />
         <div className="space-y-6">
           {projects.map((project, index) => (
@@ -29,8 +31,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ projects, sideProjec
 
       <SideProjectsSection 
         sideProjects={sideProjects} 
-        title="Explore My Products"
-        subtitle="Some of the digital products that I worked on as side projects, explore them now"
+        title={t('sections.exploreProducts')}
+        subtitle={t('sections.exploreProductsSubtitle')}
       />
       
       <CallToAction email={email} setCurrentPage={setCurrentPage} />

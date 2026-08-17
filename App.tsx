@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
+import { useTranslation } from 'react-i18next';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -13,20 +14,21 @@ import { ProductsPage } from './components/ProductsPage';
 import { HireMePage } from './components/HireMePage';
 import { ProjectDetailsPage } from './components/ProjectDetailsPage';
 import { SideProjectDetailsPage } from './components/SideProjectDetailsPage';
-import { PERSONAL_INFO, PROJECTS, SIDE_PROJECTS, SOCIAL_LINKS, SKILLS, DEVELOPER_CREDIT } from './constants';
+import { SOCIAL_LINKS } from './constants';
 import { IntroAnimation } from './components/IntroAnimation';
 import { SmoothScrollProvider, SmoothScrollToTop } from './components/SmoothScrollProvider';
+import { PortfolioProvider, usePortfolio } from './context/PortfolioContext';
 import { useLenis } from 'lenis/react';
 import clickSound from './assets/click_sound.wav';
 
-// Wrapper component to handle navigation and theme
 const AppContent: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const lenis = useLenis();
+  const { t } = useTranslation();
+  const { personalInfo, projects, sideProjects, skills, developerCredit, isRtl } = usePortfolio();
   const [showIntro, setShowIntro] = useState(true);
   
-  // Theme state initialization
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof window !== 'undefined') {
       return (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
@@ -41,7 +43,6 @@ const AppContent: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Sync theme with HTML class and localStorage
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -53,7 +54,6 @@ const AppContent: React.FC = () => {
   }, [theme]);
 
   useEffect(() => {
-    // Global UI click sound for buttons/menus
     const audio = new Audio(clickSound);
     audio.preload = 'auto';
     audio.volume = 0.35;
@@ -62,10 +62,8 @@ const AppContent: React.FC = () => {
       const target = event.target as HTMLElement | null;
       if (!target) return;
 
-      // Skip form typing interactions
       if (target.closest('input, textarea, select, label')) return;
 
-      // Play for interactive UI controls
       const interactive = target.closest('button, a, [role="button"], [data-click-sound="true"]');
       if (!interactive) return;
       if ((interactive as HTMLButtonElement).disabled) return;
@@ -109,7 +107,6 @@ const AppContent: React.FC = () => {
         return;
       }
 
-      // Fallback: plain state toggle
       setTheme(nextTheme);
       window.setTimeout(() => {
         document.documentElement.removeAttribute('data-theme-transition');
@@ -137,20 +134,17 @@ const AppContent: React.FC = () => {
     }, 150);
   }, [navigate, lenis]);
 
-  // Menu tab order for swipe navigation
   const menuTabs = ['home', 'about', 'projects', 'products', 'hire'];
 
-  // Get current page from location
   const getCurrentPage = () => {
     const path = location.pathname;
     if (path === '/') return 'home';
     if (path.startsWith('/project/')) return 'project-detail';
-    return path.slice(1); // Remove leading slash
+    return path.slice(1);
   };
 
   const currentPage = getCurrentPage();
 
-  // Swipe gesture handlers (only on mobile, not on project-detail)
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
   const currentTabIdx = menuTabs.indexOf(currentPage);
   const swipeStartAllowedRef = useRef(true);
@@ -161,10 +155,9 @@ const AppContent: React.FC = () => {
       handleSetPage(menuTabs[idx]);
     }
   };
+
   const swipeHandlers = useSwipeable({
     onSwipeStart: (e) => {
-      // Only allow deliberate horizontal swipe starting from middle of the screen.
-      // This reduces accidental tab changes when user slightly drags/scrolls.
       const touch = 'touches' in e && e.touches && e.touches[0] ? e.touches[0] : null;
       const x = touch?.clientX ?? 0;
       const y = touch?.clientY ?? 0;
@@ -183,25 +176,23 @@ const AppContent: React.FC = () => {
     onSwipedLeft: () => {
       if (!swipeStartAllowedRef.current) return;
       if (isMobile && currentTabIdx !== -1 && currentPage !== 'project-detail') {
-        goToTab(currentTabIdx + 1);
+        goToTab(currentTabIdx + (isRtl ? -1 : 1));
       }
     },
     onSwipedRight: () => {
       if (!swipeStartAllowedRef.current) return;
       if (isMobile && currentTabIdx !== -1 && currentPage !== 'project-detail') {
-        goToTab(currentTabIdx - 1);
+        goToTab(currentTabIdx + (isRtl ? 1 : -1));
       }
     },
     trackTouch: true,
     trackMouse: false,
-    // Make swipe less sensitive so slight moves don't switch pages
     delta: 60,
-    // Prefer allowing scroll unless a real swipe happens
     preventScrollOnSwipe: false,
   });
 
   if (showIntro) {
-    return <IntroAnimation onAnimationComplete={handleAnimationComplete} />;
+    return <IntroAnimation personalInfo={personalInfo} onAnimationComplete={handleAnimationComplete} />;
   }
 
   return (
@@ -214,66 +205,66 @@ const AppContent: React.FC = () => {
         toggleTheme={toggleTheme}
       />
       <main 
-        key={location.pathname} // Force re-render on route change for animations
+        key={location.pathname}
         className={`w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16 md:space-y-24 flex-grow page-transition ${isTransitioning ? 'page-fade-exit-active' : 'page-fade-enter-active'}`}
       >
         <Routes>
           <Route path="/" element={
             <>
               <Hero
-                name={PERSONAL_INFO.name}
-                title={PERSONAL_INFO.title}
-                bio={PERSONAL_INFO.bio}
-                imageUrl={PERSONAL_INFO.imageUrl}
-                email={PERSONAL_INFO.email}
-                circularText={PERSONAL_INFO.circularText}
-                circularTextLetterSpacing={PERSONAL_INFO.circularTextLetterSpacing}
-                animatedNameEnglish={PERSONAL_INFO.animatedNameEnglish}
-                animatedNameJapanese={PERSONAL_INFO.animatedNameJapanese}
+                name={personalInfo.name}
+                title={personalInfo.title}
+                bio={personalInfo.bio}
+                imageUrl={personalInfo.imageUrl}
+                email={personalInfo.email}
+                circularText={personalInfo.circularText}
+                circularTextLetterSpacing={personalInfo.circularTextLetterSpacing}
+                animatedNameEnglish={personalInfo.animatedNameEnglish}
+                animatedNameJapanese={personalInfo.animatedNameJapanese}
                 instagramUrl={SOCIAL_LINKS.find((link) => link.name === 'Instagram')?.url ?? 'https://instagram.com'}
                 setCurrentPage={handleSetPage}
               />
               <ProjectsSection 
-                projects={PROJECTS} 
+                projects={projects} 
                 onViewAllClick={() => handleSetPage('projects')} 
                 setCurrentPage={handleSetPage}
-                title="Featured Projects"
+                title={t('sections.featuredProjects')}
                 maxItems={3}
               />
               <SideProjectsSection 
-                sideProjects={SIDE_PROJECTS} 
-                title="Explore My Products" 
+                sideProjects={sideProjects} 
+                title={t('sections.exploreProducts')} 
                 onViewAllClick={() => handleSetPage('products')}
-                viewAllText="View All Products"
+                viewAllText={t('common.viewAllProducts')}
               />
-              <CallToAction email={PERSONAL_INFO.email} setCurrentPage={handleSetPage} />
+              <CallToAction email={personalInfo.email} setCurrentPage={handleSetPage} />
             </>
           } />
           
           <Route path="/about" element={
             <AboutPage 
-              personalInfo={PERSONAL_INFO} 
-              sideProjects={SIDE_PROJECTS} 
-              email={PERSONAL_INFO.email} 
+              personalInfo={personalInfo} 
+              sideProjects={sideProjects} 
+              email={personalInfo.email} 
               setCurrentPage={handleSetPage} 
               theme={theme} 
-              skills={SKILLS} 
+              skills={skills} 
             />
           } />
           
           <Route path="/projects" element={
             <ProjectsPage 
-              projects={PROJECTS} 
-              sideProjects={SIDE_PROJECTS} 
-              email={PERSONAL_INFO.email} 
+              projects={projects} 
+              sideProjects={sideProjects} 
+              email={personalInfo.email} 
               setCurrentPage={handleSetPage} 
             />
           } />
           
           <Route path="/products" element={
             <ProductsPage 
-              sideProjects={SIDE_PROJECTS} 
-              personalInfo={{email: PERSONAL_INFO.email, productsPageIntro: PERSONAL_INFO.productsPageIntro }} 
+              sideProjects={sideProjects} 
+              personalInfo={{email: personalInfo.email, productsPageIntro: personalInfo.productsPageIntro }} 
               setCurrentPage={handleSetPage} 
             />
           } />
@@ -281,13 +272,13 @@ const AppContent: React.FC = () => {
           <Route path="/product/:sideProjectId" element={
             <SideProjectDetailsPage
               setCurrentPage={handleSetPage}
-              email={PERSONAL_INFO.email}
+              email={personalInfo.email}
             />
           } />
           
           <Route path="/hire" element={
             <HireMePage 
-              personalInfo={PERSONAL_INFO} 
+              personalInfo={personalInfo} 
               socialLinks={SOCIAL_LINKS} 
               setCurrentPage={handleSetPage} 
             />
@@ -296,19 +287,19 @@ const AppContent: React.FC = () => {
           <Route path="/project/:projectId" element={
             <ProjectDetailsPage 
               setCurrentPage={handleSetPage}
-              email={PERSONAL_INFO.email}
+              email={personalInfo.email}
             />
           } />
           
           <Route path="*" element={
             <div className="text-center py-10">
-              <h1 className="text-2xl font-bold mb-4">Page Not Found</h1>
-              <p className="text-text-secondary dark:text-dark-text-secondary mb-6">The page you are looking for does not exist.</p>
+              <h1 className="text-2xl font-bold mb-4">{t('common.pageNotFound')}</h1>
+              <p className="text-text-secondary dark:text-dark-text-secondary mb-6">{t('common.pageNotFoundDescription')}</p>
               <button
                 onClick={() => handleSetPage('home')}
                 className="px-4 py-2 bg-button-primary-bg text-button-primary-text rounded-lg hover:bg-button-primary-hover"
               >
-                Go Home
+                {t('common.goHome')}
               </button>
             </div>
           } />
@@ -316,10 +307,10 @@ const AppContent: React.FC = () => {
       </main>
       <Footer
         socialLinks={SOCIAL_LINKS}
-        developerName={DEVELOPER_CREDIT.name}
-        developerUrl={DEVELOPER_CREDIT.url}
-        animatedNameEnglish={DEVELOPER_CREDIT.animatedNameEnglish}
-        animatedNameJapanese={DEVELOPER_CREDIT.animatedNameJapanese}
+        developerName={developerCredit.name}
+        developerUrl={developerCredit.url}
+        animatedNameEnglish={developerCredit.animatedNameEnglish}
+        animatedNameJapanese={developerCredit.animatedNameJapanese}
       />
     </div>
   );
@@ -329,7 +320,9 @@ const App: React.FC = () => {
   return (
     <SmoothScrollProvider>
       <Router>
-        <AppContent />
+        <PortfolioProvider>
+          <AppContent />
+        </PortfolioProvider>
       </Router>
     </SmoothScrollProvider>
   );

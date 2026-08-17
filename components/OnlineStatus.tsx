@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const OnlineStatus: React.FC = () => {
+  const { t } = useTranslation();
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
@@ -9,14 +11,12 @@ export const OnlineStatus: React.FC = () => {
       const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
       
       const hour = istTime.getHours();
-      
-      // Online from 6 AM to 11 PM (6:00 - 22:59)
       const online = hour >= 6 && hour < 23;
       setIsOnline(online);
     };
 
     checkOnlineStatus();
-    const interval = setInterval(checkOnlineStatus, 60000); // Check every minute
+    const interval = setInterval(checkOnlineStatus, 60000);
 
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +28,7 @@ export const OnlineStatus: React.FC = () => {
           ? 'bg-accent-green animate-pulse' 
           : 'bg-red-500'
       }`}
-      title={isOnline ? 'Online' : 'Offline'}
+      title={isOnline ? t('common.online') : t('common.offline')}
     ></span>
   );
 };

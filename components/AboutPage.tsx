@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AboutPageProps } from '../types'; 
 import { SectionTitle } from './SectionTitle';
 import { SideProjectsSection } from './SideProjectsSection'; 
@@ -9,6 +10,7 @@ import { LaptopIcon } from './icons';
 import { AnimatedName } from './AnimatedName';
 
 export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects, email, setCurrentPage, theme, skills }) => {
+  const { t } = useTranslation();
   const [isGlitchBurstActive, setIsGlitchBurstActive] = useState(false);
 
   const triggerGlitchBurst = useCallback(() => {
@@ -39,11 +41,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
   return (
     <div className="space-y-16 md:space-y-24">
       <section id="about-intro">
-        <SectionTitle title="About" />
+        <SectionTitle title={t('sections.about')} />
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           <div className="lg:w-2/3 space-y-4 animated-item anim-fadeInUp anim-delay-100">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary dark:text-dark-text-primary tracking-tight">
-              It's Me,{" "}
+              {t('common.itsMe')}{" "}
               <AnimatedName
                 english={animatedEnglish}
                 japanese={animatedJapanese}
@@ -65,11 +67,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
                 "focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700",
                 isGlitchBurstActive ? "is-glitching" : "",
               ].join(" ")}
-              aria-label="Trigger profile image effect"
+              aria-label={t('common.triggerProfileEffect')}
             >
               <img
                 src={personalInfo.aboutPageImageUrl}
-                alt={`Portrait of ${personalInfo.name}`}
+                alt={t('common.portraitOf', { name: personalInfo.name })}
                 className="about-profile-glitch-base w-full h-auto rounded-lg object-cover"
               />
               <img
@@ -96,7 +98,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
       </section>
 
       <section id="more-about-me" className="animated-item anim-fadeInUp anim-delay-300">
-        <h2 className="text-2xl sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-6">More About Me</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-6">{t('common.moreAboutMe')}</h2>
         <div className="space-y-4 text-text-secondary dark:text-dark-text-secondary text-base md:text-lg leading-relaxed">
           {personalInfo.aboutMeDetailed.map((paragraph, index) => (
             <p
@@ -113,7 +115,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
       <section id="tech-stack" className="animated-item anim-fadeInUp anim-delay-500">
         <h2 className="text-2xl sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-6 flex items-center">
           <LaptopIcon className="w-7 h-7 mr-3 text-text-secondary dark:text-dark-text-secondary" />
-          Tech Stack
+          {t('common.techStack')}
         </h2>
         <div className="flex flex-wrap gap-2 md:gap-3">
           {skills.map((skill, index) => (
@@ -133,7 +135,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ personalInfo, sideProjects
       
       <SideProjectsSection 
         sideProjects={sideProjects} 
-        title="My Products" 
+        title={t('sections.myProducts')} 
       /> 
       
       <CallToAction 

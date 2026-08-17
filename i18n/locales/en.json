@@ -1,0 +1,280 @@
+{
+  "languageSwitcher": {
+    "label": "Switch language",
+    "fa": "Switch to Persian",
+    "en": "Switch to English"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "products": "Products"
+  },
+  "common": {
+    "hireMe": "Hire Me",
+    "instagram": "Instagram",
+    "backToHome": "Back to Home",
+    "backToProjects": "Back to Projects",
+    "backToProducts": "Back to Products",
+    "viewAllProjects": "View All Projects",
+    "viewAllProducts": "View All Products",
+    "viewLiveProject": "View Live Project",
+    "open": "Open",
+    "goHome": "Go Home",
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDescription": "The page you are looking for does not exist.",
+    "projectNotFound": "Project Not Found",
+    "projectNotFoundDescription": "The project you are looking for does not exist or has been moved.",
+    "productNotFound": "Product Not Found",
+    "productNotFoundDescription": "The product you are looking for does not exist or has been moved.",
+    "overview": "Overview",
+    "theChallenge": "The Challenge",
+    "theSolution": "The Solution",
+    "otherProjects": "Other Projects",
+    "projectScreenshots": "Project Screenshots",
+    "screenshots": "Screenshots",
+    "keyFeatures": "Key Features",
+    "tech": "Tech",
+    "client": "Client",
+    "company": "Company",
+    "type": "Type",
+    "year": "Year",
+    "followMe": "Follow Me",
+    "allRightsReserved": "All rights reserved.",
+    "developedBy": "Developed by",
+    "uiDesignBy": "UI design by",
+    "online": "Online",
+    "offline": "Offline",
+    "im": "I'm",
+    "itsMe": "It's Me,",
+    "moreAboutMe": "More About Me",
+    "techStack": "Tech Stack",
+    "availableForWork": "Available for Work",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "name": "Name",
+    "email": "Email",
+    "emailAddress": "Email Address",
+    "message": "Message",
+    "formSuccess": "Thank you! Your message has been sent successfully.",
+    "formFixErrors": "Please correct the errors above.",
+    "downloads": "Downloads",
+    "rating": "Rating",
+    "onGooglePlay": "on Google Play",
+    "averageRating": "Average rating",
+    "downloadsCount": "{{count}} Downloads",
+    "ratingCount": "{{count}} Rating",
+    "playStoreAria": "Play Store: {{downloads}} downloads, {{rating}} star rating",
+    "viewProfile": "View Profile",
+    "githubContributions": "GitHub Contributions",
+    "loadingContributions": "Loading GitHub contributions graph...",
+    "githubUsernameMissing": "GitHub username is not provided.",
+    "githubLoadTimeout": "Failed to load contribution graph. The request timed out or the service is unresponsive.",
+    "githubLoadError": "Failed to load contribution graph. The user might not exist, the service is unavailable, or there was a network issue.",
+    "errorPrefix": "Error:",
+    "viewProjectDetails": "View details for {{name}}",
+    "viewProductDetails": "View details for {{name}}",
+    "openProduct": "Open {{name}} ({{action}})",
+    "visitInstagram": "Visit Instagram",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "followOn": "Follow on {{name}}",
+    "visitDeveloper": "Visit {{name}} on Instagram",
+    "triggerProfileEffect": "Trigger profile image effect",
+    "portraitOf": "Portrait of {{name}}",
+    "projectPreview": "{{name}} preview",
+    "projectLogo": "{{name}} logo",
+    "projectScreenshot": "{{name}} screenshot {{index}}",
+    "contributionGraphAlt": "{{username}}'s GitHub contribution graph",
+    "contributionGraphLink": "{{username}}'s contribution graph, links to GitHub profile",
+    "githubProfile": "View {{username}}'s GitHub profile"
+  },
+  "hero": {
+    "loadingUsers": "Loading users...",
+    "visitors": "visitors"
+  },
+  "cta": {
+    "title": "Let's work together.",
+    "subtitle": "Creating innovative web solutions and impactful digital experiences."
+  },
+  "sections": {
+    "featuredProjects": "Featured Projects",
+    "exploreProducts": "Explore My Products",
+    "myProjects": "My Projects",
+    "myProjectsSubtitle": "Discover my portfolio, where purposeful interfaces meet captivating design. My work strives to enhance experiences and inspire.",
+    "exploreProductsSubtitle": "Some of the digital products that I worked on as side projects, explore them now",
+    "myProducts": "My Products",
+    "myProductsDefaultSubtitle": "Explore a collection of my digital products and side projects.",
+    "sideProjects": "Side Projects",
+    "about": "About"
+  },
+  "form": {
+    "nameRequired": "Name is required.",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Email is invalid.",
+    "messageRequired": "Message is required.",
+    "unexpectedError": "An unexpected error occurred. Please try again.",
+    "networkError": "An unexpected network error occurred. Please check your connection and try again.",
+    "subject": "New Project Inquiry from {{name}}"
+  },
+  "personalInfo": {
+    "name": "Monkey D. Luffy",
+    "title": "Future Pirate King",
+    "bio": "Captain of the Straw Hat Pirates, adventurer, and lover of meat. Sailing the Grand Line in search of the One Piece!",
+    "circularText": "MONKEY D. LUFFY • PIRATE KING • STRAW HAT • ",
+    "introLetter1": "L",
+    "introLetter2": "U",
+    "introTagline": "Pirate • Dream Chaser",
+    "aboutMeIntro": "Hi! I'm Monkey D. Luffy, captain of the Straw Hat Pirates and future King of the Pirates! I love adventure, my friends, and especially meat. I ate the Gum-Gum Devil Fruit, so my body stretches like rubber! I'm sailing the Grand Line with my amazing crew, searching for the legendary One Piece treasure. I believe in freedom, friendship, and never giving up on your dreams. If you want to join my crew, you better have a dream and be ready for the adventure of a lifetime! Shishishi!",
+    "aboutMeDetailed": [
+      "Luffy set sail from Foosha Village to find the legendary treasure, One Piece. Along the way, he gathered a loyal crew, defeated powerful enemies, and made friends all over the world.",
+      "When not fighting Marines or rival pirates, Luffy enjoys eating, napping, and having fun with his crew. He believes in freedom, friendship, and never giving up on his dreams!",
+      "Luffy possesses the power of the Gum-Gum Fruit, making his body stretch like rubber. He's also mastered all three types of Haki, making him one of the most formidable pirates on the seas.",
+      "He has a knack for turning enemies into allies, inspiring others with his unwavering spirit and simple honesty.",
+      "Luffy has a bounty that keeps rising, currently one of the highest in the world, and is recognized as one of the Worst Generation.",
+      "He has led the Straw Hat Pirates through legendary battles at places like Alabasta, Enies Lobby, Marineford, Dressrosa, Whole Cake Island, and Wano.",
+      "Luffy's dream is not just to find the One Piece, but to live a life of complete freedom and help his friends achieve their dreams too.",
+      "Favorite foods: Meat (all kinds), fish, and anything Sanji cooks!",
+      "Famous catchphrases: 'I'm gonna be King of the Pirates!' and 'I want to eat meat!'"
+    ],
+    "projectsPageIntro": "Check out my greatest adventures and pirate achievements! Each project brought me closer to my dream of becoming Pirate King.",
+    "sideProjectsPageIntro": "Some of the wild side quests and inventions my crew and I have tackled on our journey!",
+    "productsPageIntro": "Explore the unique gadgets, ships, and treasures we've collected or built during our adventures!",
+    "hireMePageTitle": "Join My Crew!",
+    "hireMePageSubtitle": "Got a dream? Want to sail the Grand Line? Send me a message and maybe you can join the Straw Hat Pirates!"
+  },
+  "developerCredit": {
+    "name": "Anand Krishna"
+  },
+  "skills": [
+    "Gum-Gum Powers",
+    "Haki",
+    "Navigation",
+    "Swordsmanship",
+    "Cooking",
+    "Medical Skills",
+    "Sniping",
+    "Shipwright",
+    "Archaeology",
+    "Music",
+    "Fishman Karate",
+    "Dream Chasing",
+    "Meat Eating",
+    "Friendship"
+  ],
+  "projects": {
+    "project-going-merry": {
+      "name": "Going Merry Ship Upgrade",
+      "description": "Major upgrades and repairs to the Straw Hats' first pirate ship, the Going Merry.",
+      "technologies": ["Woodworking", "Engineering", "Friendship", "Sniper King Magic"],
+      "client": "Straw Hat Pirates",
+      "company": "Water 7 Shipwrights",
+      "projectType": "Ship Repair, Adventure",
+      "year": "Grand Line Era",
+      "tagline": "The Going Merry carried us through countless adventures. She was more than a ship—she was our friend!",
+      "overview": "After many battles and storms, the Going Merry needed serious repairs. With the help of the Water 7 shipwrights (and Usopp's determination), we gave her one last epic journey.",
+      "problemStatement": {
+        "title": "Ship in Trouble!",
+        "description": "Our beloved ship was falling apart after so many adventures. We needed to fix her or risk losing our way to the Grand Line!"
+      }
+    },
+    "project-meat-inventory": {
+      "name": "Meat Inventory App",
+      "description": "A handy app to track all the meat supplies on the Thousand Sunny.",
+      "technologies": ["React", "Meat Tracking", "Sanji's Recipes", "QR Code"],
+      "client": "Luffy (for Sanji)",
+      "company": "Straw Hat Pirates",
+      "projectType": "Food Management, App",
+      "year": "Grand Line Era",
+      "tagline": "Never run out of meat again!",
+      "overview": "Sanji was tired of Luffy eating all the meat, so we built an app to keep track of supplies. Now, everyone gets their fair share (except when I get hungry).",
+      "problemStatement": {
+        "title": "Where's the Meat?",
+        "description": "Meat kept disappearing from the kitchen. We needed a way to track it and keep Luffy honest!"
+      }
+    },
+    "project-crew-recruitment": {
+      "name": "Pirate Crew Recruitment Portal",
+      "description": "A portal for recruiting new Straw Hat Pirates with big dreams.",
+      "technologies": ["React", "Dream Detection", "Wanted Posters", "Grand Line Map"],
+      "client": "Monkey D. Luffy",
+      "company": "Straw Hat Pirates",
+      "projectType": "Recruitment, Adventure",
+      "year": "Grand Line Era",
+      "tagline": "Got a dream? Join my crew!",
+      "overview": "We needed more nakama for our journey. This portal lets dreamers from all over the world apply to join the Straw Hat Pirates. Only those with true spirit make the cut!",
+      "problemStatement": {
+        "title": "Need More Nakama!",
+        "description": "The Grand Line is tough. We need strong, loyal friends to help us reach the end!"
+      }
+    },
+    "project-grand-line-map": {
+      "name": "Grand Line Navigation System",
+      "description": "A high-tech map and log pose tracker for navigating the Grand Line.",
+      "technologies": ["Log Pose", "Weather Science", "Nami's Cartography", "React"],
+      "client": "Nami",
+      "company": "Straw Hat Pirates",
+      "projectType": "Navigation, Mapping",
+      "year": "Grand Line Era",
+      "tagline": "Never get lost again! (Unless Luffy's steering)",
+      "overview": "Nami built a navigation system to help us survive the Grand Line's crazy weather and islands. Now we only get lost when Luffy ignores her directions!",
+      "problemStatement": {
+        "title": "Lost at Sea",
+        "description": "The Grand Line is full of surprises. We needed a way to track our journey and avoid danger!"
+      }
+    }
+  },
+  "sideProjects": {
+    "side-1": {
+      "name": "Wanted Poster Generator",
+      "tag": "OPEN SOURCE",
+      "linkText": "Try Now",
+      "description": "Create your own pirate wanted poster! Upload a photo and get your bounty.",
+      "year": "2024",
+      "projectType": "Web App",
+      "tagline": "Make yourself look dangerous — even if you just ate meat.",
+      "overview": "A fun demo product page showing how side projects can open a full details view in this portfolio template.",
+      "technologies": ["React", "Canvas", "Typography"],
+      "keyFeatures": [
+        "Upload a face and generate a poster",
+        "Customize bounty text",
+        "Export as image"
+      ]
+    },
+    "side-2": {
+      "name": "Devil Fruit Encyclopedia",
+      "tag": "LIVE DEMO",
+      "linkText": "Explore",
+      "description": "Browse all known Devil Fruits and their powers. Beware of side effects!",
+      "year": "2025",
+      "projectType": "Web App",
+      "tagline": "Know every fruit before you bite it.",
+      "overview": "Example product with richer metadata for the details page.",
+      "technologies": ["React", "Search", "Content"]
+    },
+    "side-3": {
+      "name": "Zoro's Sword Tracker",
+      "tag": "Live on Play Store",
+      "linkText": "Play Store",
+      "description": "Keep track of all swords Zoro has owned (and lost).",
+      "year": "2026",
+      "projectType": "Android App",
+      "tagline": "Never lose a sword again (or do, and still track it).",
+      "overview": "Demo of Play Store metrics badges (downloads + average rating) on product cards and detail pages.",
+      "technologies": ["Android", "Flutter"],
+      "keyFeatures": [
+        "Log every sword in the collection",
+        "Mark lost / found status",
+        "Share bounty-ready screenshots"
+      ]
+    },
+    "side-4": {
+      "name": "Chopper's Medical Kit",
+      "tag": "HOBBY PROJECT",
+      "linkText": "View Kit",
+      "description": "A digital guide to Chopper's favorite remedies and medicines.",
+      "year": "2023",
+      "projectType": "Web Tool"
+    }
+  }
+}

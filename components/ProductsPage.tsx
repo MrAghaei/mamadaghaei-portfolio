@@ -1,19 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ProductsPageProps } from '../types';
 import { SectionTitle } from './SectionTitle';
 import { SideProjectsSection } from './SideProjectsSection';
 import { CallToAction } from './CallToAction';
 
 export const ProductsPage: React.FC<ProductsPageProps> = ({ sideProjects, personalInfo, setCurrentPage }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="space-y-16 md:space-y-24">
       <section id="my-products-section">
         <SectionTitle 
-          title="My Products" 
-          subtitle={personalInfo.productsPageIntro || "Explore a collection of my digital products and side projects."}
+          title={t('sections.myProducts')} 
+          subtitle={personalInfo.productsPageIntro || t('sections.myProductsDefaultSubtitle')}
         />
-        {/* Re-using SideProjectsSection as it's designed to list SideProject items */}
-        {/* Pass title="" to suppress SideProjectsSection's own title */}
         <SideProjectsSection 
           sideProjects={sideProjects}
           title="" 
