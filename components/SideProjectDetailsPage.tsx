@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams, Navigate } from "react-router-dom";
 import { CallToAction } from "./CallToAction";
 import { ArrowLeftIcon, ArrowTopRightOnSquareIcon } from "./icons";
+import { ProjectIcon } from "./ProjectIcon";
 import { PlayStoreMetrics } from "./PlayStoreMetrics";
 import { usePortfolio } from "../context/PortfolioContext";
 
@@ -51,19 +52,15 @@ export const SideProjectDetailsPage: React.FC<{
 
       <div className="text-center animated-item anim-fadeInUp anim-delay-100">
         <div className="flex justify-center mb-6">
-          {sideProject.cardImageUrl ? (
-            <img
-              src={sideProject.cardImageUrl}
-              alt={t("common.projectLogo", { name: sideProject.name })}
-              className="w-16 h-16 rounded-full object-cover border-4 border-card dark:border-dark-card shadow-lg bg-white"
-            />
-          ) : (
-            <div
-              className={`p-3 rounded-full ${
-                sideProject.iconBgColor || "bg-gray-600"
-              }`}
-            />
-          )}
+          <ProjectIcon
+            name={sideProject.name}
+            imageUrl={sideProject.cardImageUrl}
+            iconComponent={sideProject.iconComponent}
+            iconBgColor={sideProject.iconBgColor}
+            size="lg"
+            altType="logo"
+            className="shadow-lg"
+          />
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-4">

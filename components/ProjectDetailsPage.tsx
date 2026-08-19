@@ -9,6 +9,7 @@ import {
   ArrowRightIcon,
   ArrowTopRightOnSquareIcon,
 } from "./icons";
+import { ProjectIcon } from "./ProjectIcon";
 import { usePortfolio } from "../context/PortfolioContext";
 import { isRtlLanguage } from "@/i18n/config";
 
@@ -69,21 +70,15 @@ export const ProjectDetailsPage: React.FC<{
 
       <div className="text-center animated-item anim-fadeInUp anim-delay-100">
         <div className="flex justify-center mb-6">
-          {project.logoImageUrl ? (
-            <img
-              src={project.logoImageUrl}
-              alt={t("common.projectLogo", { name: project.name })}
-              className="w-16 h-16 rounded-full object-cover border-4 border-card dark:border-dark-card shadow-lg bg-white"
-            />
-          ) : (
-            <div
-              className={`p-3 rounded-full ${project.iconBgColor || "bg-gray-600"}`}
-            >
-              {project.iconComponent && (
-                <project.iconComponent className="w-8 h-8 text-white" />
-              )}
-            </div>
-          )}
+          <ProjectIcon
+            name={project.name}
+            imageUrl={project.logoImageUrl || project.cardImageUrl}
+            iconComponent={project.iconComponent}
+            iconBgColor={project.iconBgColor}
+            size="lg"
+            altType="logo"
+            className="shadow-lg"
+          />
         </div>
         <h1 className="text-4xl font-bold mb-4">{project.name}</h1>
         {project.tagline && (

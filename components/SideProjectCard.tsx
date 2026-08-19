@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SideProject } from '../types';
-import { ArrowTopRightOnSquareIcon, PuzzlePieceIcon } from './icons';
+import { ArrowTopRightOnSquareIcon } from './icons';
+import { ProjectIcon } from './ProjectIcon';
 import { PlayStoreMetrics } from './PlayStoreMetrics';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,17 +30,13 @@ export const SideProjectCard: React.FC<SideProjectCardProps> = ({ sideProject, c
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3 sm:space-x-4">
-          {sideProject.cardImageUrl ? (
-            <img 
-              src={sideProject.cardImageUrl} 
-              alt={t('common.projectPreview', { name: sideProject.name })}
-              className="w-10 h-10 rounded-full object-cover border-2 border-card dark:border-dark-card" // Added a subtle border
-            />
-          ) : (
-            <div className={`w-10 h-10 flex items-center justify-center rounded-full ${sideProject.iconBgColor || 'bg-button-secondary-bg dark:bg-dark-button-secondary-bg'}`}>
-              <PuzzlePieceIcon className="w-5 h-5 text-text-primary dark:text-dark-text-primary" />
-            </div>
-          )}
+          <ProjectIcon
+            name={sideProject.name}
+            imageUrl={sideProject.cardImageUrl}
+            iconComponent={sideProject.iconComponent}
+            iconBgColor={sideProject.iconBgColor}
+            size="sm"
+          />
           <h3 className="text-md font-semibold text-text-primary dark:text-dark-text-primary">{sideProject.name}</h3>
         </div>
         {sideProject.link ? (

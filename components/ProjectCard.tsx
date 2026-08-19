@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Project } from "../types";
-import { ArrowRightIcon, CodeBracketSquareIcon } from "./icons"; // Import default icon
+import { ArrowRightIcon } from "./icons";
+import { ProjectIcon } from "./ProjectIcon";
 import { isRtlLanguage } from "@/i18n/config";
 
 interface ProjectCardProps {
@@ -41,19 +42,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              {project.cardImageUrl ? (
-                <img
-                  src={project.cardImageUrl}
-                  alt={t("common.projectPreview", { name: project.name })}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-card dark:border-dark-card" // Added a subtle border
-                />
-              ) : (
-                <div
-                  className={`w-14 h-14 flex items-center justify-center rounded-full ${project.iconBgColor || "bg-button-secondary-bg dark:bg-dark-button-secondary-bg"}`}
-                >
-                  <CodeBracketSquareIcon className="w-7 h-7 text-text-primary dark:text-dark-text-primary" />
-                </div>
-              )}
+              <ProjectIcon
+                name={project.name}
+                imageUrl={project.cardImageUrl || project.logoImageUrl}
+                iconComponent={project.iconComponent}
+                iconBgColor={project.iconBgColor}
+                size="md"
+              />
               <div>
                 <h3 className="text-lg font-semibold text-text-primary dark:text-dark-text-primary">
                   {project.name}
