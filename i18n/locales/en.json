@@ -251,6 +251,20 @@
         "description": "Teams often depend on unfinished APIs, scattered JSON fixtures, or ad hoc mock servers that are hard to share and maintain across a project."
       }
     },
+    "project-aboureyhan-health": {
+      "name": "Aboureyhan Health",
+      "description": "A home healthcare platform for booking medical, nursing, paraclinical, and ambulance services in Mashhad.",
+      "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS", "REST APIs"],
+      "client": "Aboureyhan Health Center",
+      "projectType": "Web Application, Healthcare",
+      "year": "2025",
+      "tagline": "On-demand home medical and nursing care for patients in Mashhad.",
+      "overview": "Aboureyhan Health is a comprehensive home healthcare platform serving Mashhad and Khorasan Razavi. The platform lets patients search and book home medical care, nursing services, paraclinical tests, medical equipment rental, and private ambulance requests through a unified web experience.",
+      "problemStatement": {
+        "title": "Coordinating home healthcare services digitally",
+        "description": "Patients needed a single trusted platform to discover, compare, and request a wide range of in-home medical and nursing services without fragmented phone-based coordination."
+      }
+    },
     "project-wellowize": {
       "name": "WelloWize",
       "description": "A cognitive assessment platform with multi-tenant SaaS dashboards for analyzing large volumes of assessment data.",

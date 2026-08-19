@@ -225,6 +225,34 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    id: "project-aboureyhan-health",
+    iconComponent: FiShield,
+    iconBgColor: "bg-teal-600 dark:bg-teal-700",
+    name: "Aboureyhan Health",
+    description:
+      "A home healthcare platform for booking medical, nursing, paraclinical, and ambulance services in Mashhad.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
+    client: "Aboureyhan Health Center",
+    projectType: "Web Application, Healthcare",
+    year: "2025",
+    tagline:
+      "On-demand home medical and nursing care for patients in Mashhad.",
+    overview:
+      "Aboureyhan Health is a comprehensive home healthcare platform serving Mashhad and Khorasan Razavi. The platform lets patients search and book home medical care, nursing services, paraclinical tests, medical equipment rental, and private ambulance requests through a unified web experience.",
+    liveLink: "https://aboureyhanhealth.com/",
+    problemStatement: {
+      title: "Coordinating home healthcare services digitally",
+      description:
+        "Patients needed a single trusted platform to discover, compare, and request a wide range of in-home medical and nursing services without fragmented phone-based coordination.",
+    },
+  },
+  {
     id: "project-wellowize",
     iconComponent: FiBarChart2,
     iconBgColor: "bg-blue-600 dark:bg-blue-700",
