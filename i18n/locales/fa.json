@@ -137,7 +137,7 @@
   },
   "personalInfo": {
     "name": "محمد آقایی",
-    "title": "مهندس فول‌استک",
+    "title": "مهندس نرم‌افزار",
     "bio": "وب‌اپلیکیشن‌های مدرن و قابل توسعه را از رابط کاربری تا Backend، دیتابیس و زیرساخت توسعه می‌دهم.",
     "circularText": "MOHAMMAD AGHAEI • FULL-STACK ENGINEER • ",
     "introLetter1": "م",
@@ -197,7 +197,7 @@
   "experience": {
     "exp-freelance": {
       "company": "فریلنس",
-      "role": "مهندس فول‌استک",
+      "role": "مهندس نرم‌افزار",
       "period": "اردیبهشت ۱۴۰۵ – اکنون",
       "highlights": [
         "فعالیت مستقل در زمینه توسعه وب‌اپلیکیشن‌های Full-Stack، شامل توسعه Frontend، Backend و API، طراحی دیتابیس و استقرار پروژه."
@@ -254,7 +254,13 @@
     "project-aboureyhan-health": {
       "name": "ابوریحان هلث",
       "description": "پلتفرم مراقبت‌های خانگی برای رزرو خدمات پزشکی، پرستاری، پاراکلینیکی و آمبولانس در مشهد.",
-      "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS", "REST APIs"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "REST APIs"
+      ],
       "client": "مرکز ابوریحان طوس",
       "projectType": "وب‌اپلیکیشن، سلامت",
       "year": "۱۴۰۴",
